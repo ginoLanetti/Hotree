@@ -1,36 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxsModule } from '@ngxs/store';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainFormComponent } from './main-form/main-form.component';
-import { TextInputComponent } from './text-input/text-input.component';
-import { TextAreaComponent } from './src/shared/components/inputs/text-area/text-area.component';
-import { InputAreaComponent } from './input-area/input-area.component';
-import { SelectComponent } from './select/select.component';
-import { RadioComponent } from './radio/radio.component';
-import { NumberInputComponent } from './number-input/number-input.component';
-import { SelectInputComponent } from './select-input/select-input.component';
-import { TextAreaInputComponent } from './text-area-input/text-area-input.component';
-import { RadioInputComponent } from './radio-input/radio-input.component';
-import { EmailInputComponent } from './email-input/email-input.component';
-import { DateInputComponent } from './date-input/date-input.component';
-import { TimeInputComponent } from './time-input/time-input.component';
-import { HeaderComponent } from './header/header.component';
-import { SectionTitleComponent } from './section-title/section-title.component';
+import { MainFormComponent } from 'src/pages/main-form/main-form.component';
+import { TextInputComponent } from 'src/shared/components/inputs/label/text-input.component';
+import { TextAreaInputComponent } from 'src/shared/components/inputs/text-area-input/text-area-input.component';
+import { NumberInputComponent } from 'src/shared/components/inputs/number-input/number-input.component';
+import { SelectInputComponent } from 'src/shared/components/inputs/select-input/select-input.component';
+import { RadioInputComponent } from 'src/shared/components/inputs/radio-input/radio-input.component';
+import { EmailInputComponent } from 'src/shared/components/inputs/email-input/email-input.component';
+import { DateInputComponent } from 'src/shared/components/inputs/date-input/date-input.component';
+import { TimeInputComponent } from 'src/shared/components/inputs/time-input/time-input.component';
+import { HeaderComponent } from 'src/shared/containers/header/header.component';
+import { SectionTitleComponent } from 'src/shared/components/section-title/section-title.component';
+import { FormState } from 'src/shared/state/form.state';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainFormComponent,
     TextInputComponent,
-    TextAreaComponent,
-    InputAreaComponent,
-    SelectComponent,
-    RadioComponent,
+    TextAreaInputComponent,
     NumberInputComponent,
     SelectInputComponent,
-    TextAreaInputComponent,
     RadioInputComponent,
     EmailInputComponent,
     DateInputComponent,
@@ -40,7 +34,7 @@ import { SectionTitleComponent } from './section-title/section-title.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    NgxsModule.forRoot([FormState])
   ],
   providers: [],
   bootstrap: [AppComponent]
