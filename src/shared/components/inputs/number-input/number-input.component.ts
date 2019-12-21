@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-number-input',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./number-input.component.scss']
 })
 export class NumberInputComponent implements OnInit {
+  @Input() infoText: string;
 
   constructor() { }
 

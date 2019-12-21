@@ -3,44 +3,51 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainFormComponent } from './main-form/main-form.component';
-import { TextInputComponent } from './text-input/text-input.component';
-import { TextAreaComponent } from './src/shared/components/inputs/text-area/text-area.component';
-import { InputAreaComponent } from './input-area/input-area.component';
-import { SelectComponent } from './select/select.component';
-import { RadioComponent } from './radio/radio.component';
-import { NumberInputComponent } from './number-input/number-input.component';
-import { SelectInputComponent } from './select-input/select-input.component';
-import { TextAreaInputComponent } from './text-area-input/text-area-input.component';
-import { RadioInputComponent } from './radio-input/radio-input.component';
-import { EmailInputComponent } from './email-input/email-input.component';
-import { DateInputComponent } from './date-input/date-input.component';
-import { TimeInputComponent } from './time-input/time-input.component';
-import { HeaderComponent } from './header/header.component';
-import { SectionTitleComponent } from './section-title/section-title.component';
+import { MainFormComponent } from 'src/pages/main-form/main-form.component';
+import { LabelComponent } from 'src/shared/components/inputs/label/label.component';
+import { TextAreaInputComponent } from 'src/shared/components/inputs/text-area-input/text-area-input.component';
+import { SelectInputComponent } from 'src/shared/components/inputs/select-input/select-input.component';
+import { RadioInputComponent } from 'src/shared/components/inputs/radio-input/radio-input.component';
+import { NumberInputComponent } from 'src/shared/components/inputs/number-input/number-input.component';
+import { EmailInputComponent } from 'src/shared/components/inputs/email-input/email-input.component';
+import { DateInputComponent } from 'src/shared/components/inputs/date-input/date-input.component';
+import { TimeInputComponent } from 'src/shared/components/inputs/time-input/time-input.component';
+import { HeaderComponent } from 'src/shared/containers/header/header.component';
+import { SectionTitleComponent } from 'src/shared/components/section-title/section-title.component';
+import { AboutComponent } from 'src/shared/containers/about/about.component';
+import { CoordinatorComponent } from 'src/shared/containers/coordinator/coordinator.component';
+import { WhenComponent } from 'src/shared/containers/when/when.component';
+import { SuccessComponent } from 'src/shared/containers/success/success.component';
+import { ButtonComponent } from 'src/shared/components/button/button.component';
+import { TextInputComponent } from 'src/shared/components/inputs/text-input/text-input.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainFormComponent,
+    AboutComponent,
+    CoordinatorComponent,
+    WhenComponent,
+    SuccessComponent,
     TextInputComponent,
-    TextAreaComponent,
-    InputAreaComponent,
-    SelectComponent,
-    RadioComponent,
-    NumberInputComponent,
-    SelectInputComponent,
     TextAreaInputComponent,
+    SelectInputComponent,
     RadioInputComponent,
+    NumberInputComponent,
     EmailInputComponent,
     DateInputComponent,
     TimeInputComponent,
     HeaderComponent,
-    SectionTitleComponent
+    LabelComponent,
+    SectionTitleComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

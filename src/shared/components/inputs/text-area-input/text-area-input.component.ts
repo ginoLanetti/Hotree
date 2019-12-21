@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-text-area-input',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./text-area-input.component.scss']
 })
 export class TextAreaInputComponent implements OnInit {
+  @Input() placeholder: string;
 
   constructor() { }
 

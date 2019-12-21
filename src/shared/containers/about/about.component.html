@@ -1,1 +1,28 @@
-<p>text-input works!</p>
+<form>
+  <h2>About</h2>
+  <div>
+    <app-label [labelName]="'Title'"></app-label>
+    <app-text-input></app-text-input>
+  </div>
+  <div>
+    <app-label [labelName]="'Description'"></app-label>
+    <app-text-area-input></app-text-area-input>
+  </div>
+  <div>
+    <app-label [labelName]="'Category'"></app-label>
+    <app-select-input></app-select-input>
+  </div>
+  <div>
+    <app-label [labelName]="'Payment'"></app-label>
+    <app-radio-input [radioName]="'payment'" [radioLabel]="'Free event'"></app-radio-input>
+    <app-radio-input [radioName]="'payment'" [radioLabel]="'Paid event'"></app-radio-input>
+  </div>
+  <div>
+    <app-label [labelName]="'Reward'"></app-label>
+    <app-number-input
+      [infoText]="'reward points for attendance'"
+    ></app-number-input
+      >
+    <p>reward points for attendance</p>
+  </div>
+</form>

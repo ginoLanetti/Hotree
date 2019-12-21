@@ -1,1 +1,6 @@
-<p>select-input works!</p>
+
+<select>
+  <option *ngFor="let option of optionsList" [value]="option.id">
+    {{ option.label }}
+  </option>
+</select>

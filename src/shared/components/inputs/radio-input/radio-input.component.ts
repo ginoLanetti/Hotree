@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-radio-input',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./radio-input.component.scss']
 })
 export class RadioInputComponent implements OnInit {
+  @Input() radioName: string;
+  @Input() radioLabel: string;
 
   constructor() { }
 
