@@ -20,6 +20,7 @@ import { WhenComponent } from 'src/shared/containers/when/when.component';
 import { SuccessComponent } from 'src/shared/containers/success/success.component';
 import { ButtonComponent } from 'src/shared/components/button/button.component';
 import { TextInputComponent } from 'src/shared/components/inputs/text-input/text-input.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
@@ -48,6 +49,8 @@ import { TextInputComponent } from 'src/shared/components/inputs/text-input/text
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

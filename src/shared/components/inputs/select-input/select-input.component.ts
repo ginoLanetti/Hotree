@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-select-input',
@@ -8,8 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class SelectInputComponent implements OnInit {
   @Input() placeholder: string;
-  @Input() preselected: number;
-  optionsList = [{label: 'test', id: 3}, {label: 'test2', id: 2}];
+  @Input() formController: FormControl;
+  @Input() optionsList: Array<object>;
 
   constructor() { }
 

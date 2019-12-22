@@ -1,14 +1,19 @@
-<form>
+<form [formGroup]="whenForm">
   <h2>When</h2> 
   <div>
     <app-label [labelName]="'Starts on'"></app-label>
-    <app-date-input></app-date-input>
+    <app-date-input
+      [formDateController]="whenForm.controls.date"
+      [formTimeController]="whenForm.controls.time"
+      [formRadioController]="whenForm.controls.ampm">
+    </app-date-input>
   </div>
   <div>
     <app-label [labelName]="'Duration'"></app-label>
     <app-number-input
       [placeholder]="'Number'"
       [infoText]="'reward points for attendance'"
+      [formController]="whenForm.controls.duration"
     ></app-number-input
       >
   </div>

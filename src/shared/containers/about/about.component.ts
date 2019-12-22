@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
@@ -7,11 +7,22 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  aboutForm: FormGroup;
+  optionsList = [{label: 'test0', id: 1}, {label: 'test1', id: 2}, {label: 'test2', id: 3}];
 
-
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.buildForm();
   }
 
+  private buildForm(): void {
+    this.aboutForm = this.formBuilder.group({
+      title: [''],
+      description: [''],
+      category: [this.optionsList[1]],
+      payment: ['free'],
+      reward: ['']
+    });
+  }
 }

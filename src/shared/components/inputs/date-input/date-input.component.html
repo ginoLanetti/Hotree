@@ -1,7 +1,11 @@
 <div>
-  <input type="date"/>
+  <input 
+    type="date"
+    [formControl]="formDateController"/>
   <p>at</p>
-  <input type="time"/>
-  <app-radio-input [radioName]="'dateAndTime'" [radioLabel]="'AM'"></app-radio-input>
-  <app-radio-input [radioName]="'dateAndTime'" [radioLabel]="'PM'"></app-radio-input>
+  <input 
+    type="time"
+    [formControl]="formTimeController"/>
+  <app-radio-input [radioName]="'dateAndTime'" [radioLabel]="'AM'" [radioValue]="'am'" [formController]="formRadioController"></app-radio-input>
+  <app-radio-input [radioName]="'dateAndTime'" [radioLabel]="'PM'" [radioValue]="'pm'" [formController]="formRadioController"></app-radio-input>
 </div>

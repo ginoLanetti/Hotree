@@ -1,6 +1,6 @@
 
-<select>
-  <option *ngFor="let option of optionsList" [value]="option.id">
+<select [formControl]="formController">
+  <option *ngFor="let option of optionsList" [ngValue]="option">
     {{ option.label }}
   </option>
 </select>

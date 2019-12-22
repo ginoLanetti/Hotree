@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-date-input',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./date-input.component.scss']
 })
 export class DateInputComponent implements OnInit {
-
+  @Input() formDateController: FormControl;
+  @Input() formTimeController: FormControl;
+  @Input() formRadioController: FormControl;
   constructor() { }
 
   ngOnInit() {

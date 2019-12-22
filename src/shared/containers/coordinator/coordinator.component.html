@@ -1,11 +1,16 @@
-<form>
+<form [formGroup]="coordinatorForm">
   <h2>Coordinator</h2> 
   <div>
     <app-label [labelName]="'Responsible'"></app-label>
-    <app-select-input></app-select-input>
+    <app-select-input
+      [formController]="coordinatorForm.controls.responsible"
+      [optionsList]="optionsList">
+    </app-select-input
+      >
   </div>
   <div>
     <app-label [labelName]="'Email'"></app-label>
-    <app-email-input></app-email-input>
+    <app-email-input [formController]="coordinatorForm.controls.email">
+    </app-email-input>
   </div>
 </form>
