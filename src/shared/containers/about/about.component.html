@@ -2,11 +2,16 @@
   <h2>About</h2>
   <div>
     <app-label [labelName]="'Title'"></app-label>
-    <app-text-input></app-text-input>
+    <app-text-input
+      [placeholder]="'Make it short and clear'"
+    ></app-text-input
+      >
   </div>
   <div>
     <app-label [labelName]="'Description'"></app-label>
-    <app-text-area-input></app-text-area-input>
+    <app-text-area-input
+      [placeholder]="'Make it short and clear'"
+    ></app-text-area-input>
   </div>
   <div>
     <app-label [labelName]="'Category'"></app-label>
@@ -20,6 +25,7 @@
   <div>
     <app-label [labelName]="'Reward'"></app-label>
     <app-number-input
+      [placeholder]="'Number'"
       [infoText]="'reward points for attendance'"
     ></app-number-input
       >

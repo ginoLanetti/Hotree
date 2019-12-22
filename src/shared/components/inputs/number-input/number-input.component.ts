@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NumberInputComponent implements OnInit {
   @Input() infoText: string;
+  @Input() placeholder: string;
 
   constructor() { }
 
