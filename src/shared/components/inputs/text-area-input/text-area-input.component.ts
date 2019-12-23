@@ -9,6 +9,7 @@ import { FormControl } from '@angular/forms';
 export class TextAreaInputComponent implements OnInit {
   @Input() placeholder: string;
   @Input() formController: FormControl;
+  characterCount: number;
 
   constructor() { }
 

@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
+const startsOnValidator = (group: FormGroup): any => {
+  const date = group.controls.date.value;
+  const time = group.controls.time.value;
+  return date && time ? null : { noDateOrTime: true };
+};
 @Component({
   selector: 'app-when',
   templateUrl: './when.component.html',
@@ -21,6 +26,6 @@ export class WhenComponent implements OnInit {
       time: [null],
       ampm: ['am'],
       duration: ['']
-    });
+    }, {validators: startsOnValidator});
   }
 }

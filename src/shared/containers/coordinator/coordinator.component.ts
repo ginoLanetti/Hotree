@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-coordinator',
@@ -8,7 +8,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class CoordinatorComponent implements OnInit {
   coordinatorForm: FormGroup;
-  optionsList = [{label: 'test0', id: 1}, {label: 'test1', id: 2}, {label: 'test2', id: 3}];
+  usersList = [{label: 'test0', id: 1}, {label: 'test1', id: 2}, {label: 'test2', id: 3}];
+  loggedUserId = 3;
+  presetUser = this.usersList.find(user => user.id === this.loggedUserId ? user : '');
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -18,8 +20,8 @@ export class CoordinatorComponent implements OnInit {
 
   private buildForm(): void {
     this.coordinatorForm = this.formBuilder.group({
-      responsible: [this.optionsList[1]],
-      email: ['']
+      responsible: [this.presetUser, Validators.required],
+      email: ['', Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]
     });
   }
 }

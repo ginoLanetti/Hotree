@@ -4,7 +4,10 @@
     <app-label [labelName]="'Responsible'"></app-label>
     <app-select-input
       [formController]="coordinatorForm.controls.responsible"
-      [optionsList]="optionsList">
+      [optionsList]="usersList"
+      [presetOption]="presetUser"
+      [presetOptgroupLabel]="'Me'"
+      [otherOptgroupLabel]="'Others'">
     </app-select-input
       >
   </div>

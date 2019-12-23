@@ -7,12 +7,14 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./select-input.component.scss']
 })
 export class SelectInputComponent implements OnInit {
+  @Input() presetOption: object;
   @Input() placeholder: string;
+  @Input() presetOptgroupLabel: string;
+  @Input() otherOptgroupLabel: string;
   @Input() formController: FormControl;
   @Input() optionsList: Array<object>;
 
   constructor() { }
-
   ngOnInit() {
   }
 

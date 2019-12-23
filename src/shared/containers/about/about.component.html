@@ -20,6 +20,7 @@
     <app-select-input
       [formController]="aboutForm.controls.category"
       [optionsList]="optionsList"
+      [placeholder]="'Select category (skills, interests, locations)'"
     ></app-select-input
       >
   </div>
@@ -37,15 +38,20 @@
       [radioName]="'payment'"
       [formController]="aboutForm.controls.payment">
     </app-radio-input>
+    <app-number-input
+      *ngIf="aboutForm.controls.payment.value === 'paid'"
+      [placeholder]="'Fee'"
+      [infoText]="'$'"
+      [formController]="aboutForm.controls.fee">
+    </app-number-input
+      >
   </div>
   <div>
     <app-label [labelName]="'Reward'"></app-label>
     <app-number-input
       [placeholder]="'Number'"
       [infoText]="'reward points for attendance'"
-      [formController]="aboutForm.controls.reward"
-    ></app-number-input
-      >
-    <p>reward points for attendance</p>
+      [formController]="aboutForm.controls.reward">
+    </app-number-input>
   </div>
 </form>
