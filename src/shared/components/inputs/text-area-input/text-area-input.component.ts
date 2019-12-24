@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-text-area-input',
@@ -9,11 +10,13 @@ import { FormControl } from '@angular/forms';
 export class TextAreaInputComponent implements OnInit {
   @Input() placeholder: string;
   @Input() formController: FormControl;
-  characterCount: number;
+  @Input() maxCharacterLength: number;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    console.log(this.formController);
   }
 
 }

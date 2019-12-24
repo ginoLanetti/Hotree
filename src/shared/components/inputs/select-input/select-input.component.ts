@@ -11,6 +11,7 @@ export class SelectInputComponent implements OnInit {
   @Input() placeholder: string;
   @Input() presetOptgroupLabel: string;
   @Input() otherOptgroupLabel: string;
+  @Input() annotation: string;
   @Input() formController: FormControl;
   @Input() optionsList: Array<object>;
 

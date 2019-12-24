@@ -13,6 +13,7 @@
     <app-text-area-input
       [placeholder]="'Make it short and clear'"
       [formController]="aboutForm.controls.description"
+      [maxCharacterLength]="140"
     ></app-text-area-input>
   </div>
   <div>
@@ -21,6 +22,7 @@
       [formController]="aboutForm.controls.category"
       [optionsList]="optionsList"
       [placeholder]="'Select category (skills, interests, locations)'"
+      [annotation]="'Describes topic and people who should be interested in this event'"
     ></app-select-input
       >
   </div>

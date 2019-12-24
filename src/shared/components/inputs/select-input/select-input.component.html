@@ -1,20 +1,25 @@
-<select [formControl]="formController">
-  <option *ngIf="!presetOption" [ngValue]="null" [disabled]="true">
-    {{ placeholder }}
-  </option>
-  <optgroup *ngIf="presetOption" label="{{ presetOptgroupLabel }}">
-    <option [ngValue]="presetOption">{{ presetOption.label }}</option>
-  </optgroup>
-  <ng-container *ngIf="!presetOption">
-    <option *ngFor="let option of optionsList" [ngValue]="option">
-      {{ option.label }}
+<div>
+  <select [formControl]="formController">
+    <option *ngIf="!presetOption" [ngValue]="null" [disabled]="true">
+      {{ placeholder }}
     </option>
-  </ng-container>
-  <optgroup *ngIf="presetOption" label="{{ otherOptgroupLabel }}">
-    <ng-container *ngFor="let option of optionsList">
-      <option *ngIf="option.id !== presetOption.id" [ngValue]="option">
+    <optgroup *ngIf="presetOption" label="{{ presetOptgroupLabel }}">
+      <option [ngValue]="presetOption">{{ presetOption.label }}</option>
+    </optgroup>
+    <ng-container *ngIf="!presetOption">
+      <option *ngFor="let option of optionsList" [ngValue]="option">
         {{ option.label }}
       </option>
     </ng-container>
-  </optgroup>
-</select>
+    <optgroup *ngIf="presetOption" label="{{ otherOptgroupLabel }}">
+      <ng-container *ngFor="let option of optionsList">
+        <option *ngIf="option.id !== presetOption.id" [ngValue]="option">
+          {{ option.label }}
+        </option>
+      </ng-container>
+    </optgroup>
+  </select>
+  <p *ngIf="annotation">{{ annotation }}</p>
+</div>
+
+

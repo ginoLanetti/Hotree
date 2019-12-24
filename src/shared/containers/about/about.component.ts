@@ -18,7 +18,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
-    console.log(this.aboutForm.errors);
+    console.log(this.aboutForm.controls.description);
   }
 
   private buildForm(): void {
