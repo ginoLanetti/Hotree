@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { SuccessComponent } from 'src/shared/containers/success/success.componen
 import { ButtonComponent } from 'src/shared/components/button/button.component';
 import { TextInputComponent } from 'src/shared/components/inputs/text-input/text-input.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -44,13 +46,16 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HeaderComponent,
     LabelComponent,
     SectionTitleComponent,
-    ButtonComponent
+    ButtonComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

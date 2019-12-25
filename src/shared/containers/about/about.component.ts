@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FetchingSelectDataService } from 'src/shared/services/fetching-select-data.service';
 
 const feeValidator = (group: FormGroup): any => {
   const payment = group.controls.payment.value;
@@ -14,12 +15,16 @@ const feeValidator = (group: FormGroup): any => {
 export class AboutComponent implements OnInit {
   @Input() submitted: boolean;
   aboutForm: FormGroup;
-  optionsList = [{name: 'test0', id: 1}, {name: 'test1', id: 2}, {name: 'test2', id: 3}];
-  constructor(private formBuilder: FormBuilder) { }
+  optionsList: Array<any>;
+
+  constructor(private formBuilder: FormBuilder, private fetchingSelectData: FetchingSelectDataService) { }
 
   ngOnInit() {
     this.buildForm();
-    console.log(this.aboutForm.controls.description);
+    this.fetchingSelectData.fetchData('categories').subscribe(
+      (data) => this.optionsList = data,
+      (error) => console.error(error)
+    );
   }
 
   private buildForm(): void {
