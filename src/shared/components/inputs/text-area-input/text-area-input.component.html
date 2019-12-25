@@ -1,1 +1,8 @@
-<p>text-area-input works!</p>
+<div>
+  <textarea placeholder="{{ placeholder }}" [formControl]="formController"></textarea>
+  <div>
+    <p>Max length {{ maxCharacterLength }} characters</p>
+    <p>{{ formController.value.length }}/{{ maxCharacterLength }}</p>
+  </div>
+</div>
+

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-text-area-input',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./text-area-input.component.scss']
 })
 export class TextAreaInputComponent implements OnInit {
+  @Input() placeholder: string;
+  @Input() formController: FormControl;
+  @Input() maxCharacterLength: number;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    console.log(this.formController);
   }
 
 }

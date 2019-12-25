@@ -1,1 +1,13 @@
-<p>date-input works!</p>
+<div>
+  <input 
+    type="date"
+    [min]="minDate"
+    [formControl]="formDateController"/>
+  <p>at</p>
+  <input 
+    type="time"
+    min="00:00" max="12:00"
+    [formControl]="formTimeController"/>
+  <app-radio-input [radioName]="'ampm'" [radioLabel]="'AM'" [radioValue]="'am'" [formController]="formRadioController"></app-radio-input>
+  <app-radio-input [radioName]="'ampm'" [radioLabel]="'PM'" [radioValue]="'pm'" [formController]="formRadioController"></app-radio-input>
+</div>

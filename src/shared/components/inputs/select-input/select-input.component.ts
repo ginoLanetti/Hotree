@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-select-input',
@@ -6,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-input.component.scss']
 })
 export class SelectInputComponent implements OnInit {
+  @Input() optionsList: Array<object>;
+  @Input() presetOption: object;
+  @Input() placeholder: string;
+  @Input() presetOptgroupName: string;
+  @Input() otherOptgroupName: string;
+  @Input() annotation: string;
+  @Input() formController: FormControl;
+
 
   constructor() { }
-
   ngOnInit() {
   }
 

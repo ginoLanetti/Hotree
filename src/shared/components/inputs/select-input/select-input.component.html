@@ -1,1 +1,25 @@
-<p>select-input works!</p>
+<div>
+  <select [formControl]="formController">
+    <option *ngIf="!presetOption" [ngValue]="null" [disabled]="true">
+      {{ placeholder }}
+    </option>
+    <optgroup *ngIf="presetOption" label="{{ presetOptgroupName }}">
+      <option [ngValue]="presetOption.id">{{ presetOption.name }} {{ presetOption.lastname }}</option>
+    </optgroup>
+    <ng-container *ngIf="!presetOption">
+      <option *ngFor="let option of optionsList" [ngValue]="option.id">
+        {{ option.name }}
+      </option>
+    </ng-container>
+    <optgroup *ngIf="presetOption" label="{{ otherOptgroupName }}">
+      <ng-container *ngFor="let option of optionsList">
+        <option *ngIf="option.id !== presetOption.id" [ngValue]="option.id">
+          {{ option.name }} {{ option.lastname }}
+        </option>
+      </ng-container>
+    </optgroup>
+  </select>
+  <p *ngIf="annotation">{{ annotation }}</p>
+</div>
+
+
