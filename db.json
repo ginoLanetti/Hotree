@@ -92,5 +92,8 @@
       "name": "Janet",
       "lastname": "Stewart"
     }
-  ]
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
