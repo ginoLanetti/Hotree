@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 const feeValidator = (group: FormGroup): any => {
@@ -12,8 +12,9 @@ const feeValidator = (group: FormGroup): any => {
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  @Input() submitted: boolean;
   aboutForm: FormGroup;
-  optionsList = [{label: 'test0', id: 1}, {label: 'test1', id: 2}, {label: 'test2', id: 3}];
+  optionsList = [{name: 'test0', id: 1}, {name: 'test1', id: 2}, {name: 'test2', id: 3}];
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -7,8 +7,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./coordinator.component.scss']
 })
 export class CoordinatorComponent implements OnInit {
+  @Input() submitted: boolean;
   coordinatorForm: FormGroup;
-  usersList = [{label: 'test0', id: 1}, {label: 'test1', id: 2}, {label: 'test2', id: 3}];
+  usersList = [{name: 'test0', id: 1}, {name: 'test1', id: 2}, {name: 'test2', id: 3}];
   loggedUserId = 3;
   presetUser = this.usersList.find(user => user.id === this.loggedUserId ? user : '');
 

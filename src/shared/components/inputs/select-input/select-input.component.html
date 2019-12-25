@@ -3,18 +3,18 @@
     <option *ngIf="!presetOption" [ngValue]="null" [disabled]="true">
       {{ placeholder }}
     </option>
-    <optgroup *ngIf="presetOption" label="{{ presetOptgroupLabel }}">
-      <option [ngValue]="presetOption">{{ presetOption.label }}</option>
+    <optgroup *ngIf="presetOption" label="{{ presetOptgroupName }}">
+      <option [ngValue]="presetOption">{{ presetOption.name }}</option>
     </optgroup>
     <ng-container *ngIf="!presetOption">
       <option *ngFor="let option of optionsList" [ngValue]="option">
-        {{ option.label }}
+        {{ option.name }}
       </option>
     </ng-container>
-    <optgroup *ngIf="presetOption" label="{{ otherOptgroupLabel }}">
+    <optgroup *ngIf="presetOption" label="{{ otherOptgroupName }}">
       <ng-container *ngFor="let option of optionsList">
         <option *ngIf="option.id !== presetOption.id" [ngValue]="option">
-          {{ option.label }}
+          {{ option.name }}
         </option>
       </ng-container>
     </optgroup>

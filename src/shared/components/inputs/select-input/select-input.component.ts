@@ -9,8 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SelectInputComponent implements OnInit {
   @Input() presetOption: object;
   @Input() placeholder: string;
-  @Input() presetOptgroupLabel: string;
-  @Input() otherOptgroupLabel: string;
+  @Input() presetOptgroupName: string;
+  @Input() otherOptgroupName: string;
   @Input() annotation: string;
   @Input() formController: FormControl;
   @Input() optionsList: Array<object>;

@@ -5,7 +5,8 @@
     <app-date-input
       [formDateController]="whenForm.controls.date"
       [formTimeController]="whenForm.controls.time"
-      [formRadioController]="whenForm.controls.ampm">
+      [formRadioController]="whenForm.controls.ampm"
+      [minDate]="minDate()">
     </app-date-input>
   </div>
   <div>

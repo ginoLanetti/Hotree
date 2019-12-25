@@ -1,8 +1,15 @@
 <app-header></app-header>
-<form [formGroup]="mainForm">
-  <app-about></app-about>
-  <app-coordinator></app-coordinator>
-  <app-when></app-when>
+<form [formGroup]="mainForm" (ngSubmit)="submit()">
+  <app-about
+    [submitted]="submitted">
+  </app-about
+  >
+  <app-coordinator
+    [submitted]="submitted">
+  </app-coordinator>
+  <app-when
+    [submitted]="submitted">
+  </app-when>
   <app-button [buttonType]="'submit'" [actionText]="'Publish Event'" >
   </app-button>
   <app-success></app-success>

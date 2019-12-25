@@ -10,9 +10,11 @@ export class DateInputComponent implements OnInit {
   @Input() formDateController: FormControl;
   @Input() formTimeController: FormControl;
   @Input() formRadioController: FormControl;
+  @Input() minDate: string;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.minDate);
   }
 
 }
