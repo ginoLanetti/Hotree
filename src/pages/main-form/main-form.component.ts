@@ -16,8 +16,10 @@ export class MainFormComponent implements OnInit, OnDestroy {
   submitted: boolean;
   formStateData: FormattedFormStateInterface;
   formDataSubscription: Subscription;
+  public aboutValidity: string;
+  public coordinatorValidity: string;
+  public whenValidity: string;
   formsValid: boolean;
-
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -26,7 +28,7 @@ export class MainFormComponent implements OnInit, OnDestroy {
     this.formDataSubscription = this.formData$.subscribe(data => {
       this.formStateData = data;
     },
-    (error) => console.error(error)
+      (error) => console.error(error)
     );
   }
 
@@ -36,12 +38,34 @@ export class MainFormComponent implements OnInit, OnDestroy {
 
   submit() {
     this.submitted = true;
-    console.log(this.formStateData);
+    if (
+      this.aboutValidity === 'VALID' &&
+      this.coordinatorValidity === 'VALID' &&
+      this.whenValidity === 'VALID'
+    ) {
+      this.formsValid = true;
+      console.log(this.formStateData);
+    }
+  }
+
+  validityHandler($event: any, receiver: string) {
+    switch (receiver) {
+      case 'about':
+        this.aboutValidity = $event;
+        break;
+      case 'coordinator':
+        this.coordinatorValidity = $event;
+        break;
+      case 'when':
+        this.whenValidity = $event;
+        break;
+      default:
+        console.error('no validity receiver');
+    }
   }
 
   private buildForm(): void {
     this.mainForm = this.formBuilder.group({
-
     });
   }
 }

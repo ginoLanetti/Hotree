@@ -9,6 +9,6 @@ export interface FormattedFormStateInterface {
   duration?: number;
   coordinator: {
     email?: string;
-    id: string;
+    id: number;
   };
 }

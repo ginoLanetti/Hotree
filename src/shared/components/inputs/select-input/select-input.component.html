@@ -1,10 +1,17 @@
 <div>
   <select [formControl]="formController">
-    <option *ngIf="!presetOption" [ngValue]="null" [disabled]="true">
+    <option
+      *ngIf="!presetOption"
+      [ngValue]="null"
+      [disabled]="true"
+      [hidden]="true"
+    >
       {{ placeholder }}
     </option>
     <optgroup *ngIf="presetOption" label="{{ presetOptgroupName }}">
-      <option [ngValue]="presetOption.id">{{ presetOption.name }} {{ presetOption.lastname }}</option>
+      <option [ngValue]="presetOption.id"
+        >{{ presetOption.name }} {{ presetOption.lastname }}</option
+      >
     </optgroup>
     <ng-container *ngIf="!presetOption">
       <option *ngFor="let option of optionsList" [ngValue]="option.id">
@@ -21,5 +28,3 @@
   </select>
   <p *ngIf="annotation">{{ annotation }}</p>
 </div>
-
-

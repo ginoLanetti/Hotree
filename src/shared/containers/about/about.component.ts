@@ -1,8 +1,7 @@
-import { Component, OnInit, Input, Output} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FetchingSelectDataService } from 'src/shared/services/fetching-select-data.service';
 import { OptionInterface } from 'src/shared/interfaces/option.inteface';
-import { EventEmitter } from 'protractor';
 import { feeValidator } from 'src/shared/utils/custom-validators.util';
 
 @Component({
@@ -12,7 +11,7 @@ import { feeValidator } from 'src/shared/utils/custom-validators.util';
 })
 export class AboutComponent implements OnInit {
   @Input() submitted: boolean;
-  // @Output() validityChange = new EventEmitter();
+  @Output() validityChange = new EventEmitter<string>();
   aboutForm: FormGroup;
   optionsList: OptionInterface[];
   constructor(private formBuilder: FormBuilder, private fetchingSelectData: FetchingSelectDataService) { }
@@ -23,12 +22,12 @@ export class AboutComponent implements OnInit {
       (data) => this.optionsList = data,
       (error) => console.error(error)
     );
-    console.log(this.aboutForm.controls.description.errors);
-    // this.aboutForm.statusChanges.subscribe(
-    //   status => {
-    //    this.validityChange.emit(status);
-    //   }
-    // );
+    this.aboutForm.statusChanges.subscribe(
+      status => {
+       this.validityChange.emit(status);
+       console.log(status);
+      }
+    );
   }
 
   private buildForm(): void {

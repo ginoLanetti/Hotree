@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
 
-
 @Component({
   selector: 'app-alert-box',
   templateUrl: './alert-box.component.html',
@@ -25,7 +24,7 @@ export class AlertBoxComponent {
       if (this.formErrors.feeRequired) {
         return `Fee value is required`;
       } else if (this.formErrors.noDateOrTime) {
-        return `${this.sectionName} is required`;
+        return `Time and date are required`;
       } else if (this.formErrors.badTimeFormat) {
         return `Time field accepts only 12 hours format`;
       } else if (this.formErrors.eventPriorToDate) {

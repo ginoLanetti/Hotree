@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder} from '@angular/forms';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { startsOnValidator, timeValidator, dateValidator } from 'src/shared/utils/custom-validators.util';
 
 @Component({
@@ -9,13 +9,19 @@ import { startsOnValidator, timeValidator, dateValidator } from 'src/shared/util
 })
 export class WhenComponent implements OnInit {
   @Input() submitted: boolean;
+  @Output() validityChange = new EventEmitter<string>();
   whenForm: FormGroup;
-
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.buildForm();
+    this.whenForm.statusChanges.subscribe(
+      status => {
+        this.validityChange.emit(status);
+        console.log(status);
+      }
+    );
   }
 
   minDate() {
@@ -39,6 +45,6 @@ export class WhenComponent implements OnInit {
       time: [null],
       ampm: ['am'],
       duration: ['']
-    }, {validators: [startsOnValidator, timeValidator, dateValidator]});
+    }, { validators: [startsOnValidator, timeValidator, dateValidator]});
   }
 }

@@ -11,8 +11,7 @@ export class TextAreaInputComponent implements OnInit {
   @Input() formController: FormControl;
   @Input() maxCharacterLength: number;
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
     console.log(this.formController);

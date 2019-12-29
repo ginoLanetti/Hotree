@@ -1,18 +1,21 @@
 <app-header></app-header>
 <form *ngIf="!formsValid" [formGroup]="mainForm" (ngSubmit)="submit()">
   <app-about
-    [submitted]="submitted">
-  </app-about
+    [submitted]="submitted"
+    (validityChange)="validityHandler($event, 'about')"
   >
+  </app-about>
   <app-coordinator
-    [submitted]="submitted">
+    [submitted]="submitted"
+    (validityChange)="validityHandler($event, 'coordinator')"
+  >
   </app-coordinator>
   <app-when
-    [submitted]="submitted">
+    [submitted]="submitted"
+    (validityChange)="validityHandler($event, 'when')"
+  >
   </app-when>
-  <app-button [buttonType]="'submit'" [actionText]="'Publish Event'" >
+  <app-button [buttonType]="'submit'" [actionText]="'Publish Event'">
   </app-button>
 </form>
 <app-success *ngIf="formsValid"></app-success>
-
-

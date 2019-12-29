@@ -1,34 +1,32 @@
 <form [formGroup]="aboutForm" ngxsForm="formData.aboutForm">
   <app-section-title [sectionTitle]="'About'"></app-section-title>
   <div>
-    <app-label 
-      [labelName]="'Title'"
-      [mandatory]="true">
-    </app-label>
+    <app-label [labelName]="'Title'" [mandatory]="true"> </app-label>
     <app-text-input
       [placeholder]="'Make it short and clear'"
-      [formController]="aboutForm.controls.title">
+      [formController]="aboutForm.controls.title"
+    >
     </app-text-input>
     <app-alert-box
       [submitted]="submitted"
       [sectionName]="'Title'"
-      [inputErrors]="aboutForm.controls.title.errors">
+      [inputErrors]="aboutForm.controls.title.errors"
+    >
     </app-alert-box>
   </div>
   <div>
-    <app-label 
-      [labelName]="'Description'"
-      [mandatory]="true">
-    </app-label>
+    <app-label [labelName]="'Description'" [mandatory]="true"> </app-label>
     <app-text-area-input
       [placeholder]="'Write about your event, be creative'"
       [formController]="aboutForm.controls.description"
-      [maxCharacterLength]="140">
+      [maxCharacterLength]="140"
+    >
     </app-text-area-input>
     <app-alert-box
       [submitted]="submitted"
       [sectionName]="'Description'"
-      [inputErrors]="aboutForm.controls.description.errors">
+      [inputErrors]="aboutForm.controls.description.errors"
+    >
     </app-alert-box>
   </div>
   <div>
@@ -37,32 +35,36 @@
       [formController]="aboutForm.controls.category"
       [optionsList]="optionsList"
       [placeholder]="'Select category (skills, interests, locations)'"
-      [annotation]="'Describes topic and people who should be interested in this event'">
+      [annotation]="
+        'Describes topic and people who should be interested in this event'
+      "
+    >
     </app-select-input>
   </div>
   <div>
     <app-label [labelName]="'Payment'"></app-label>
-    <app-radio-input 
-      [radioValue]="'free'" 
-      [radioLabel]="'Free event'" 
-      [radioName]="'payment'" 
-      [formController]="aboutForm.controls.payment">
-    </app-radio-input>
-    <app-radio-input 
-      [radioValue]="'paid'" 
-      [radioLabel]="'Paid event'" 
+    <app-radio-input
+      [radioValue]="'free'"
+      [radioLabel]="'Free event'"
       [radioName]="'payment'"
-      [formController]="aboutForm.controls.payment">
+      [formController]="aboutForm.controls.payment"
+    >
+    </app-radio-input>
+    <app-radio-input
+      [radioValue]="'paid'"
+      [radioLabel]="'Paid event'"
+      [radioName]="'payment'"
+      [formController]="aboutForm.controls.payment"
+    >
     </app-radio-input>
     <app-number-input
       *ngIf="aboutForm.controls.payment.value === 'paid'"
       [placeholder]="'Fee'"
       [infoText]="'$'"
-      [formController]="aboutForm.controls.fee">
+      [formController]="aboutForm.controls.fee"
+    >
     </app-number-input>
-    <app-alert-box
-      [submitted]="submitted"
-      [formErrors]="aboutForm.errors">
+    <app-alert-box [submitted]="submitted" [formErrors]="aboutForm.errors">
     </app-alert-box>
   </div>
   <div>
@@ -70,7 +72,8 @@
     <app-number-input
       [placeholder]="'Number'"
       [infoText]="'reward points for attendance'"
-      [formController]="aboutForm.controls.reward">
+      [formController]="aboutForm.controls.reward"
+    >
     </app-number-input>
   </div>
 </form>
