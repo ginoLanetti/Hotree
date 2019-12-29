@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FetchingSelectDataService } from 'src/shared/services/fetching-select-data.service';
-import { UserInterface } from 'src/shared/interfaces/user.inteface';
+import { OptionInterface } from 'src/shared/interfaces/option.inteface';
 
 @Component({
   selector: 'app-coordinator',
@@ -13,7 +13,7 @@ export class CoordinatorComponent implements OnInit {
   coordinatorForm: FormGroup;
   usersList: Array<object>;
   loggedUserId = 3;
-  presetUser: UserInterface;
+  presetUser: OptionInterface;
 
   constructor(private formBuilder: FormBuilder, private fetchingSelectData: FetchingSelectDataService) { }
 

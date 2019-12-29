@@ -1,4 +1,4 @@
-export interface UserInterface {
+export interface OptionInterface {
   id: number;
   name: string;
   lastname: string;

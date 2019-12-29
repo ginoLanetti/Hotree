@@ -1,5 +1,5 @@
 <app-header></app-header>
-<form [formGroup]="mainForm" (ngSubmit)="submit()">
+<form *ngIf="!formsValid" [formGroup]="mainForm" (ngSubmit)="submit()">
   <app-about
     [submitted]="submitted">
   </app-about
@@ -12,7 +12,7 @@
   </app-when>
   <app-button [buttonType]="'submit'" [actionText]="'Publish Event'" >
   </app-button>
-  <app-success></app-success>
 </form>
+<app-success *ngIf="formsValid"></app-success>
 
 

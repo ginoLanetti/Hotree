@@ -1,4 +1,4 @@
-<form [formGroup]="whenForm">
+<form [formGroup]="whenForm" ngxsForm="formData.whenForm">
   <h2>When</h2> 
   <div>
     <app-label [labelName]="'Starts on'"></app-label>
@@ -13,7 +13,7 @@
     <app-label [labelName]="'Duration'"></app-label>
     <app-number-input
       [placeholder]="'Number'"
-      [infoText]="'reward points for attendance'"
+      [infoText]="'hour'"
       [formController]="whenForm.controls.duration"
     ></app-number-input
       >
