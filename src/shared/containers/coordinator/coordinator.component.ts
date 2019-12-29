@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FetchingSelectDataService } from 'src/shared/services/fetching-select-data.service';
-import { UserInterface } from 'src/shared/interfaces/user.inteface';
+import { OptionInterface } from 'src/shared/interfaces/option.inteface';
 
 @Component({
   selector: 'app-coordinator',
@@ -10,25 +10,31 @@ import { UserInterface } from 'src/shared/interfaces/user.inteface';
 })
 export class CoordinatorComponent implements OnInit {
   @Input() submitted: boolean;
+  @Output() validityChange = new EventEmitter<string>();
   coordinatorForm: FormGroup;
-  usersList: Array<object>;
+  usersList: OptionInterface[];
   loggedUserId = 3;
-  presetUser: UserInterface;
+  presetUser: OptionInterface;
 
   constructor(private formBuilder: FormBuilder, private fetchingSelectData: FetchingSelectDataService) { }
 
   ngOnInit() {
-
+    this.buildForm();
     this.fetchingSelectData.fetchData('employes').subscribe(
       (data) => {
         this.usersList = data;
         this.presetUser = data.find(user => user.id === this.loggedUserId ? user : '');
         this.coordinatorForm.controls.responsible.setValue(this.presetUser.id);
-        console.log(this.presetUser);
       },
       (error) => console.error(error)
     );
-    this.buildForm();
+    this.coordinatorForm.statusChanges.subscribe(
+      status => {
+       this.validityChange.emit(status);
+       console.log(status);
+      }
+    );
+
   }
 
   private buildForm(): void {

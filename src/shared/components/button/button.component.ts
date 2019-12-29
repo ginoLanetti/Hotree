@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,13 +6,11 @@ import { FormControl } from '@angular/forms';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   @Input() actionText: string;
   @Input() buttonType: string;
   @Input() formController: FormControl;
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor() { }
 
 }

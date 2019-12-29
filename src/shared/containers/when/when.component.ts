@@ -1,19 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
-const startsOnValidator = (group: FormGroup): any => {
-  const date = group.controls.date.value;
-  const time = group.controls.time.value;
-  return date && time ? null : { noDateOrTime: true };
-};
-const timeValidator = (group: FormGroup): any => {
-  const time = group.controls.time.value;
-  return  (time && /^(1[0-2]|0?[1-9]):[0-5][0-9]/.test(time)) ? null : { badTimeFormat: true };
-};
-const dateValidator = (group: FormGroup): any => {
-  const date = group.controls.date.value;
-  return  new Date(date) < new Date()  ? { datePriorToEvent: true } : null;
-};
+import { startsOnValidator, timeValidator, dateValidator } from 'src/shared/utils/custom-validators.util';
 
 @Component({
   selector: 'app-when',
@@ -22,13 +9,19 @@ const dateValidator = (group: FormGroup): any => {
 })
 export class WhenComponent implements OnInit {
   @Input() submitted: boolean;
+  @Output() validityChange = new EventEmitter<string>();
   whenForm: FormGroup;
-
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.buildForm();
+    this.whenForm.statusChanges.subscribe(
+      status => {
+        this.validityChange.emit(status);
+        console.log(status);
+      }
+    );
   }
 
   minDate() {
@@ -52,6 +45,6 @@ export class WhenComponent implements OnInit {
       time: [null],
       ampm: ['am'],
       duration: ['']
-    }, {validators: [startsOnValidator, timeValidator, dateValidator]});
+    }, { validators: [startsOnValidator, timeValidator, dateValidator]});
   }
 }

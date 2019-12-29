@@ -1,21 +1,27 @@
-<form [formGroup]="whenForm">
-  <h2>When</h2> 
+<form [formGroup]="whenForm" ngxsForm="formData.whenForm">
+  <app-section-title [sectionTitle]="'When'"></app-section-title>
   <div>
-    <app-label [labelName]="'Starts on'"></app-label>
+    <app-label [labelName]="'Starts on'" [mandatory]="true"> </app-label>
     <app-date-input
       [formDateController]="whenForm.controls.date"
       [formTimeController]="whenForm.controls.time"
       [formRadioController]="whenForm.controls.ampm"
-      [minDate]="minDate()">
+      [minDate]="minDate()"
+    >
     </app-date-input>
+    <app-alert-box
+      [submitted]="submitted"
+      [sectionName]="'Starts on'"
+      [formErrors]="whenForm.errors"
+    >
+    </app-alert-box>
   </div>
   <div>
     <app-label [labelName]="'Duration'"></app-label>
     <app-number-input
       [placeholder]="'Number'"
-      [infoText]="'reward points for attendance'"
+      [infoText]="'hour'"
       [formController]="whenForm.controls.duration"
-    ></app-number-input
-      >
+    ></app-number-input>
   </div>
 </form>

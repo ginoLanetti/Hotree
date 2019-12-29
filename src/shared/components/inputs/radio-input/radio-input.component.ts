@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,15 +6,12 @@ import { FormControl } from '@angular/forms';
   templateUrl: './radio-input.component.html',
   styleUrls: ['./radio-input.component.scss']
 })
-export class RadioInputComponent implements OnInit {
+export class RadioInputComponent {
   @Input() radioLabel: string;
   @Input() radioName: string;
   @Input() radioValue: string;
   @Input() formController: FormControl;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

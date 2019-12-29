@@ -1,19 +1,31 @@
-<form [formGroup]="coordinatorForm">
-  <h2>Coordinator</h2> 
+<form [formGroup]="coordinatorForm" ngxsForm="formData.coordinatorForm">
+  <app-section-title [sectionTitle]="'Coordinator'"></app-section-title>
   <div>
-    <app-label [labelName]="'Responsible'"></app-label>
+    <app-label [labelName]="'Responsible'" [mandatory]="true"> </app-label>
     <app-select-input
       [formController]="coordinatorForm.controls.responsible"
       [optionsList]="usersList"
       [presetOption]="presetUser"
       [presetOptgroupName]="'Me'"
-      [otherOptgroupName]="'Others'">
-    </app-select-input
-      >
+      [otherOptgroupName]="'Others'"
+    >
+    </app-select-input>
+    <app-alert-box
+      [submitted]="submitted"
+      [sectionName]="'Responsible'"
+      [inputErrors]="coordinatorForm.controls.responsible.errors"
+    >
+    </app-alert-box>
   </div>
   <div>
     <app-label [labelName]="'Email'"></app-label>
     <app-email-input [formController]="coordinatorForm.controls.email">
     </app-email-input>
+    <app-alert-box
+      [submitted]="submitted"
+      [sectionName]="'Email'"
+      [inputErrors]="coordinatorForm.controls.email.errors"
+    >
+    </app-alert-box>
   </div>
 </form>

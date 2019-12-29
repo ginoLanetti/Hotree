@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,12 +6,9 @@ import { FormControl } from '@angular/forms';
   templateUrl: './email-input.component.html',
   styleUrls: ['./email-input.component.scss']
 })
-export class EmailInputComponent implements OnInit {
+export class EmailInputComponent {
   @Input() formController: FormControl;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
