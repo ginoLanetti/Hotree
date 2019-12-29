@@ -24,7 +24,6 @@ export class CoordinatorComponent implements OnInit {
         this.usersList = data;
         this.presetUser = data.find(user => user.id === this.loggedUserId ? user : '');
         this.coordinatorForm.controls.responsible.setValue(this.presetUser.id);
-        console.log(this.presetUser);
       },
       (error) => console.error(error)
     );

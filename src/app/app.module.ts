@@ -28,6 +28,7 @@ import { ButtonComponent } from 'src/shared/components/button/button.component';
 import { TextInputComponent } from 'src/shared/components/inputs/text-input/text-input.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertBoxComponent } from 'src/shared/components/alert-box/alert-box.component';
 
 
 
@@ -52,7 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     LabelComponent,
     SectionTitleComponent,
-    ButtonComponent
+    ButtonComponent,
+    AlertBoxComponent
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-
-const startsOnValidator = (group: FormGroup): any => {
-  const date = group.controls.date.value;
-  const time = group.controls.time.value;
-  return date && time ? null : { noDateOrTime: true };
-};
-const timeValidator = (group: FormGroup): any => {
-  const time = group.controls.time.value;
-  return  (time && /^(1[0-2]|0?[1-9]):[0-5][0-9]/.test(time)) ? null : { badTimeFormat: true };
-};
-const dateValidator = (group: FormGroup): any => {
-  const date = group.controls.date.value;
-  return  new Date(date) < new Date()  ? { datePriorToEvent: true } : null;
-};
+import { FormGroup, FormBuilder} from '@angular/forms';
+import { startsOnValidator, timeValidator, dateValidator } from 'src/shared/utils/custom-validators.util';
 
 @Component({
   selector: 'app-when',
