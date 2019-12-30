@@ -15,6 +15,9 @@ app-select-input{
 .about-form__payment-number-input{
   margin-left: 1rem;
 }
-app-radio-input{
-  padding-top: 0.5rem;
+app-alert-box{
+  display: flex;
+  flex-basis: 20%;
+  align-items: center;
+  margin-left: 0.5rem;
 }

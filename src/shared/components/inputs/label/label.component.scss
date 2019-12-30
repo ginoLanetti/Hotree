@@ -2,10 +2,15 @@
 
 .label{
   display: flex;
+  margin-top: 0.5rem;
   text-transform: uppercase;
   color: $input-label-color;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .mandatory-star{
-  color: $reddish;
+  color: $alert-color;
+  margin-left: 0.2rem;
+}
+.label--alert{
+  color: $alert-color;
 }

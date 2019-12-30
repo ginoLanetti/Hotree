@@ -3,7 +3,9 @@
     type="number"
     placeholder="{{ placeholder }}"
     [formControl]="formController"
-    class="number-input__input"
+    [ngClass]="submitted && formErrors ?
+     'number-input__input--alert':
+     'number-input__input'"
   />
   <div *ngIf="infoText" class="number-input__info-text">{{ infoText }}</div>
 </div>

@@ -1,3 +1,9 @@
-input{
-  width: 100%
+@import '../../../../presets.scss';
+
+.email-input{
+  width: 100%;
+}
+.email-input--alert{
+  width: 100%;
+  border: 0.05rem solid $alert-color;
 }

@@ -1,10 +1,16 @@
 <form [formGroup]="aboutForm" ngxsForm="formData.aboutForm" class="section-container">
   <app-section-title [sectionTitle]="'About'"></app-section-title>
   <div class="input-line">
-    <app-label [labelName]="'Title'" [mandatory]="true"> </app-label>
+    <app-label 
+      [labelName]="'Title'" 
+      [mandatory]="true"
+      [submitted]="submitted"
+      [inputErrors]="aboutForm.controls.title.errors"> 
+    </app-label>
     <app-text-input
       [placeholder]="'Make it short and clear'"
       [formController]="aboutForm.controls.title"
+      [submitted]="submitted"
     >
     </app-text-input>
     <app-alert-box
@@ -15,11 +21,17 @@
     </app-alert-box>
   </div>
   <div class="input-line">
-    <app-label [labelName]="'Description'" [mandatory]="true"> </app-label>
+    <app-label 
+      [labelName]="'Description'" 
+      [mandatory]="true"
+      [submitted]="submitted"
+      [inputErrors]="aboutForm.controls.description.errors"> 
+    </app-label>
     <app-text-area-input
       [placeholder]="'Write about your event, be creative'"
       [formController]="aboutForm.controls.description"
       [maxCharacterLength]="140"
+      [submitted]="submitted"
     >
     </app-text-area-input>
     <app-alert-box
@@ -40,7 +52,11 @@
     </app-select-input>
   </div>
   <div class="input-line">
-    <app-label [labelName]="'Payment'"></app-label>
+    <app-label 
+      [labelName]="'Payment'"
+      [submitted]="submitted"
+      [formErrors]="aboutForm.errors">
+    </app-label>
     <app-radio-input
       [radioValue]="'free'"
       [radioLabel]="'Free event'"
@@ -60,6 +76,8 @@
       [placeholder]="'Fee'"
       [infoText]="'$'"
       [formController]="aboutForm.controls.fee"
+      [submitted]="submitted"
+      [formErrors]="aboutForm.errors"
       class="about-form__payment-number-input"
     >
     </app-number-input>

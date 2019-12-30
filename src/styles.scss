@@ -6,7 +6,6 @@ input[type="time"]::-webkit-datetime-edit-ampm-field {
 }
 html {
   box-sizing: border-box;
-  color: $default-color;
 }
 *,
 *:before,
@@ -15,7 +14,7 @@ html {
 }
 body {
   font-family: "Roboto", sans-serif;
-  color: black;
+  color: $default-color;
   font-size: 1rem;
 }
 h2 {
@@ -60,13 +59,15 @@ input[type="time"]:invalid
 input,
 textarea,
 select {
-  border: 1px solid $input-border-color;
+  color: $default-color;
+  border: 0.05rem solid $input-border-color;
   border-radius: 0.02rem;
   padding: 0.5rem;
 }
 .section-container {
   border: 0.05rem solid $section-border-color;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
+  box-shadow: 0px 0px 5px -1px #57545770;
   padding: 1.5rem 2.5rem;
   margin-top: 1.8rem;
 }

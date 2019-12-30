@@ -18,12 +18,18 @@
     </app-alert-box>
   </div>
   <div class="input-line">
-    <app-label [labelName]="'Email'"></app-label>
-    <app-email-input [formController]="coordinatorForm.controls.email">
+    <app-label 
+      [labelName]="'Email'"
+      [submitted]="submitted"
+      [inputErrors]="coordinatorForm.controls.email.errors"
+      >
+    </app-label>
+    <app-email-input 
+      [formController]="coordinatorForm.controls.email"
+      [submitted]="submitted">
     </app-email-input>
     <app-alert-box
       [submitted]="submitted"
-      [sectionName]="'Email'"
       [inputErrors]="coordinatorForm.controls.email.errors"
     >
     </app-alert-box>

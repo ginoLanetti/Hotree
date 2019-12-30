@@ -1,17 +1,22 @@
 <form [formGroup]="whenForm" ngxsForm="formData.whenForm" class="section-container">
   <app-section-title [sectionTitle]="'When'"></app-section-title>
   <div class="input-line">
-    <app-label [labelName]="'Starts on'" [mandatory]="true"> </app-label>
+    <app-label 
+      [labelName]="'Starts on'" 
+      [mandatory]="true"
+      [formErrors]="whenForm.errors"
+      [submitted]="submitted"> 
+    </app-label>
     <app-date-input
       [formDateController]="whenForm.controls.date"
       [formTimeController]="whenForm.controls.time"
       [formRadioController]="whenForm.controls.ampm"
       [minDate]="minDate()"
+      [submitted]="submitted"
     >
     </app-date-input>
     <app-alert-box
       [submitted]="submitted"
-      [sectionName]="'Starts on'"
       [formErrors]="whenForm.errors"
     >
     </app-alert-box>

@@ -34,11 +34,13 @@ export class FormState {
     const convertTime = (timeString: string) => {
       const timeArray = timeString.split(':');
       const min = timeArray[1];
-      let hour = Number(timeArray[0]);
-      if (ampm === 'pm') {
-        hour = 12 + parseInt(timeArray[0], 10);
+      let hour = timeArray[0];
+      if (ampm === 'pm' && Number(hour) < 12) {
+        hour = `${12 + parseInt(timeArray[0], 10)}`;
+      } else if ((ampm === 'pm' && Number(hour) === 12)) {
+        hour = `${parseInt(timeArray[0], 10) - 12}`;
       }
-      return `${hour}:${min}`;
+      return `${Number(hour) < 10 ? `0${hour}` : hour }:${min}`;
     };
     const formattedState = {
       title: `${title}`,

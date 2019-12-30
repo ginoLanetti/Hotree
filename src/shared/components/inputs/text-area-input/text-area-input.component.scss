@@ -11,3 +11,6 @@ textarea{
   color: $input-border-color;
   font-weight: 200;
 }
+.textarea--alert{
+  border: 0.05rem solid $alert-color;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { startsOnValidator, timeValidator, dateValidator } from 'src/shared/utils/custom-validators.util';
 
 @Component({
@@ -41,8 +41,8 @@ export class WhenComponent implements OnInit {
 
   private buildForm(): void {
     this.whenForm = this.formBuilder.group({
-      date: [null],
-      time: [null],
+      date: [null, Validators.required],
+      time: [null, Validators.required],
       ampm: ['am'],
       duration: ['']
     }, { validators: [startsOnValidator, timeValidator, dateValidator]});

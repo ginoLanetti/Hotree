@@ -9,6 +9,7 @@ import { FormControl } from '@angular/forms';
 export class TextInputComponent {
   @Input() placeholder: string;
   @Input() formController: FormControl;
+  @Input() submitted: boolean;
 
   constructor() { }
 

@@ -1,4 +1,36 @@
+@import '../../../../presets.scss';
 
 .starts-on{
   display: flex;
+}
+.starts-on__at{
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.starts-on__date::-webkit-calendar-picker-indicator{
+  color: $input-label-color;
+  background-color: none;
+  width: 0.7rem;
+  height: 0.4rem;
+}
+.starts-on__date::-webkit-calendar-picker-indicator:hover{
+  background-color: white;
+}
+.starts-on__date::-webkit-inner-spin-button{
+  display: none;
+}
+.starts-on__date--alert, .starts-on__time--alert{
+  border: 0.05rem solid $alert-color;
+}
+.starts-on__time::-webkit-inner-spin-button{
+  appearance:none;
+  background: url('../../../../assets/two-way-arrow.png') no-repeat right;
+  background-position-x: 98%;
+  padding-right: 1rem;
+  text-align: center;
+}
+.starts-on__time::-webkit-clear-button, .starts-on__date::-webkit-clear-button{
+  display: none;
 }

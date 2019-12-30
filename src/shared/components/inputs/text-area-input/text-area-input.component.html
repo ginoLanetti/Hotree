@@ -2,7 +2,8 @@
     placeholder="{{ placeholder }}"
     [formControl]="formController"
     rows="7"
-  ></textarea >
+    [ngClass]="{'textarea--alert': formController.errors && submitted}">
+  </textarea >
   <div class="textarea__annotation">
     <div>Max length {{ maxCharacterLength }} characters</div>
     <div>{{ formController.value.length }}/{{ maxCharacterLength }}</div>

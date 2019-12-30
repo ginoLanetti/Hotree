@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class EmailInputComponent {
   @Input() formController: FormControl;
+  @Input() submitted: boolean;
 
   constructor() { }
 

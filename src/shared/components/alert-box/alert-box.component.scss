@@ -1,6 +1,25 @@
 @import '../../../presets.scss';
-p {
-  margin: 0;
+
+
+.alert-box__text {
+  position: relative;
   color: white;
-  background-color: $reddish;
+  font-size: 0.85rem;
+  text-align: center;
+  background-color: $alert-color;
+  padding: 0.35rem;
+  border-radius: 0.15rem;
+}
+.alert-box__text:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.35rem solid transparent;
+	border-right-color: $alert-color;
+	border-left: 0;
+	margin-top: -0.35rem;
+	margin-left: -0.35rem;
 }
