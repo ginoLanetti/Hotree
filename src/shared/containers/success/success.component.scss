@@ -1,6 +1,6 @@
-@import '../../../presets.scss';
+@import "../../../presets.scss";
 
-.success{
+.success {
   width: 80%;
   margin-top: 1.8rem;
   padding: 1.5rem 2.5rem;
@@ -9,10 +9,10 @@
   border-radius: 0.2rem;
   box-shadow: 0px 0px 5px -1px #57545770;
 }
-.success__header{
+.success__header {
   color: $success-color;
   font-weight: 400;
 }
-.success__text{
+.success__text {
   margin-top: 1rem;
 }

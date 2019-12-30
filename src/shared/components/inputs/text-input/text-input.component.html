@@ -2,8 +2,6 @@
   type="text" 
   placeholder="{{ placeholder }}" 
   [formControl]="formController"
-  [ngClass]="{
-    'text-input': !submitted,
-    'text-input--alert': formController.errors && submitted
-  }"
+  class="text-input"
+  [ngClass]="{'text-input--alert': submitted && formController.errors}"
 />

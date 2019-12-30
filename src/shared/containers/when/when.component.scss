@@ -1,10 +1,12 @@
-@import '../../../presets.scss';
+@import "../../../presets.scss";
 
-app-label{
+app-label {
   flex-basis: 15%;
 }
-app-alert-box{
+app-alert-box {
   display: flex;
   align-items: center;
-  margin-left: 0.5rem;
+  @include if-size(mediumUp) {
+    margin-left: 0.5rem;
+  }
 }

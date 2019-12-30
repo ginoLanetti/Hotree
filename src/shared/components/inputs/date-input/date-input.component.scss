@@ -1,36 +1,74 @@
-@import '../../../../presets.scss';
+@import "../../../../presets.scss";
 
-.starts-on{
+.starts-on {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  @include if-size(medSmallUp) {
+    flex-direction: row;
+  }
+  @include if-size(mediumUp) {
+    flex-wrap: nowrap;
+    align-items: auto;
+  }
 }
-.starts-on__at{
-  margin: 0 1rem;
+.starts-on__at {
+  margin: 0.5rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  @include if-size(medSmallUp) {
+    margin: 0.5rem 0;
+  }
+  @include if-size(mediumUp) {
+    margin: 0.5rem 1rem;
+  }
 }
-.starts-on__date::-webkit-calendar-picker-indicator{
+.starts-on__date,
+.starts-on__time {
+  text-align: center;
+  width: 100%;
+  @include if-size(medSmallUp) {
+    flex-basis: 45%;
+  }
+  @include if-size(mediumUp) {
+    flex-basis: inherit;
+  }
+}
+.starts-on__date:invalid::-webkit-datetime-edit,
+.starts-on__date::-webkit-calendar-picker-indicator {
   color: $input-label-color;
   background-color: none;
   width: 0.7rem;
   height: 0.4rem;
 }
-.starts-on__date::-webkit-calendar-picker-indicator:hover{
+.starts-on__date::-webkit-calendar-picker-indicator:hover {
   background-color: white;
 }
-.starts-on__date::-webkit-inner-spin-button{
+.starts-on__date::-webkit-inner-spin-button {
   display: none;
 }
-.starts-on__date--alert, .starts-on__time--alert{
+.starts-on__time:invalid {
+  color: $input-border-color;
+}
+.starts-on__time::-webkit-datetime-edit-ampm-field {
+  display: none;
+}
+.starts-on__date--alert,
+.starts-on__time--alert {
   border: 0.05rem solid $alert-color;
 }
-.starts-on__time::-webkit-inner-spin-button{
-  appearance:none;
-  background: url('../../../../assets/two-way-arrow.png') no-repeat right;
+.starts-on__time::-webkit-inner-spin-button {
+  appearance: none;
+  background: url("../../../../assets/two-way-arrow.png") no-repeat right;
   background-position-x: 98%;
   padding-right: 1rem;
   text-align: center;
 }
-.starts-on__time::-webkit-clear-button, .starts-on__date::-webkit-clear-button{
+.starts-on__time::-webkit-clear-button,
+.starts-on__date::-webkit-clear-button {
   display: none;
 }

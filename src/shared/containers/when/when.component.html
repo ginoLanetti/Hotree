@@ -1,6 +1,6 @@
 <form [formGroup]="whenForm" ngxsForm="formData.whenForm" class="section-container">
   <app-section-title [sectionTitle]="'When'"></app-section-title>
-  <div class="input-line">
+  <div class="input-row">
     <app-label 
       [labelName]="'Starts on'" 
       [mandatory]="true"
@@ -21,7 +21,7 @@
     >
     </app-alert-box>
   </div>
-  <div class="input-line">
+  <div class="input-row">
     <app-label [labelName]="'Duration'"></app-label>
     <app-number-input
       [placeholder]="'Number'"

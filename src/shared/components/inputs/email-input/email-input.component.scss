@@ -1,9 +1,9 @@
-@import '../../../../presets.scss';
+@import "../../../../presets.scss";
 
-.email-input{
+.email-input {
   width: 100%;
 }
-.email-input--alert{
+.email-input--alert {
   width: 100%;
   border: 0.05rem solid $alert-color;
 }

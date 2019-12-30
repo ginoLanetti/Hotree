@@ -6,5 +6,8 @@
   </textarea >
   <div class="textarea__annotation">
     <div>Max length {{ maxCharacterLength }} characters</div>
-    <div>{{ formController.value.length }}/{{ maxCharacterLength }}</div>
+    <div [ngClass]="{'textarea__annotation--alert': formController.value.length >= maxCharacterLength}">
+      {{ formController.value.length }}/{{ maxCharacterLength }}
+    </div>
   </div>
+  

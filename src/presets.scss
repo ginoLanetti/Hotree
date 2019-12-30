@@ -1,3 +1,4 @@
+
 /*colors*/
 $header-background-color: #355990;
 $header-top-border-color: #1e3c68;
@@ -12,4 +13,20 @@ $success-color:#70bf75;
 $success-background-color: #f0fcf3;
 $shadow-color: #efefef;
 
+
+/*Media queries*/
+$medium-small-screen-break: 500px;
+$medium-screen-break: 950px;
+
+@mixin if-size($media) {
+  @if $media == medSmallUp {
+    @media only screen and (min-width: $medium-small-screen-break) {
+      @content;
+    }
+  } @else if $media == mediumUp {
+    @media only screen and (min-width: $medium-screen-break) {
+      @content;
+    }
+  } 
+}
 

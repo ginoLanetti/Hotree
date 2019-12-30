@@ -1,6 +1,6 @@
 <form [formGroup]="aboutForm" ngxsForm="formData.aboutForm" class="section-container">
   <app-section-title [sectionTitle]="'About'"></app-section-title>
-  <div class="input-line">
+  <div class="input-row">
     <app-label 
       [labelName]="'Title'" 
       [mandatory]="true"
@@ -20,7 +20,7 @@
     >
     </app-alert-box>
   </div>
-  <div class="input-line">
+  <div class="input-row">
     <app-label 
       [labelName]="'Description'" 
       [mandatory]="true"
@@ -41,7 +41,7 @@
     >
     </app-alert-box>
   </div>
-  <div class="input-line">
+  <div class="input-row">
     <app-label [labelName]="'Category'"></app-label>
     <app-select-input
       [formController]="aboutForm.controls.category"
@@ -51,7 +51,7 @@
     >
     </app-select-input>
   </div>
-  <div class="input-line">
+  <div class="input-row">
     <app-label 
       [labelName]="'Payment'"
       [submitted]="submitted"
@@ -81,10 +81,10 @@
       class="about-form__payment-number-input"
     >
     </app-number-input>
-    <app-alert-box [submitted]="submitted" [formErrors]="aboutForm.errors">
+    <app-alert-box [submitted]="submitted" [formErrors]="aboutForm.errors" class="about-form__feeAlert">
     </app-alert-box>
   </div>
-  <div class="input-line">
+  <div class="input-row">
     <app-label [labelName]="'Reward'"></app-label>
     <app-number-input
       [placeholder]="'Number'"

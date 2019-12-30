@@ -1,17 +1,19 @@
-@import '../../../presets.scss';
+@import "../../../presets.scss";
 
-app-label{
+app-label {
   flex-basis: 15%;
 }
-app-select-input{
+app-select-input {
   flex-basis: 65%;
 }
-app-email-input{
+app-email-input {
   flex-basis: 65%;
 }
-app-alert-box{
+app-alert-box {
   display: flex;
   flex-basis: 20%;
   align-items: center;
-  margin-left: 0.5rem;
+  @include if-size(mediumUp) {
+    margin-left: 0.5rem;
+  }
 }

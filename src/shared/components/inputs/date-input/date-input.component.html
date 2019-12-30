@@ -3,10 +3,9 @@
     type="date" 
     [min]="minDate" 
     [formControl]="formDateController" 
-    [ngStyle]="{'color': formDateController.pristine && !presetOption ? '#d8d8da' : '#001c00'}" 
-    [ngClass]="submitted && formDateController.errors ?
-     'starts-on__date--alert':
-     'starts-on__date'"
+    [ngStyle]="{'color': formDateController.pristine && !presetOption ? '#d8d8da' : '#676767'}" 
+    class="starts-on__date"
+    [ngClass]="{'starts-on__date--alert': submitted && formDateController.errors}"
    >
   <div class="starts-on__at">at</div>
   <input
@@ -14,10 +13,9 @@
     min="01:00"
     max="12:59"
     [formControl]="formTimeController"
-    [ngStyle]="{'color': formTimeController.pristine && !presetOption ? '#d8d8da' : '#001c00'}"
-    [ngClass]="submitted && formTimeController.errors ?
-    'starts-on__time--alert':
-    'starts-on__time'"
+    [ngStyle]="{'color': formTimeController.pristine && !presetOption ? '#d8d8da' : '#676767'}"
+    class="starts-on__time"
+    [ngClass]="{'starts-on__time--alert': submitted && formTimeController.errors}"
   />
   <app-radio-input
     [radioName]="'ampm'"

@@ -1,6 +1,33 @@
-label{
+@import "../../../../presets.scss";
+
+label {
   display: flex;
   height: 100%;
   align-items: center;
-  margin-left: 0.5rem;
+  @include if-size(medSmallUp) {
+    margin-left: 0.5rem;
+  }
+  justify-content: flex-start;
+  @include if-size(mediumUp) {
+    justify-content: auto;
+  }
+}
+
+//custom radio buttons
+
+#foo:checked::before,
+.radio {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip: rect(0 0 0 0);
+}
+#foo:checked,
+.radio + label::before {
+  content: url("../../../../assets/radio-not-checked.png");
+  margin: 0.5rem;
+  position: relative;
+  top: 0.1rem;
+}
+.radio:checked + label::before {
+  content: url("../../../../assets/radio-checked.png");
 }

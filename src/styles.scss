@@ -1,9 +1,8 @@
 @import "~normalize.css";
 @import "./presets.scss";
 
-input[type="time"]::-webkit-datetime-edit-ampm-field {
-  display: none;
-}
+// prestyling 
+
 html {
   box-sizing: border-box;
 }
@@ -20,40 +19,11 @@ body {
 h2 {
   margin: 0;
 }
-button,
-input[type="submit"],
-input[type="button"] {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-#foo:checked::before,
-input[type="radio"] {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  clip: rect(0 0 0 0);
-}
 
-#foo:checked,
-input[type="radio"] + label::before {
-  content: url("./assets/radio-not-checked.png");
-  margin: 0.5rem;
-  position: relative;
-  top: 0.1rem;
-}
+//shared styles for containers
 
-input[type="radio"]:checked + label::before {
-  content: url("./assets/radio-checked.png");
-}
 input::placeholder,
-textarea::placeholder,
-input[type="date"]:invalid::-webkit-datetime-edit,
-input[type="time"]:invalid
-{
+textarea::placeholder{
   color: $input-border-color;
 }
 input,
@@ -71,10 +41,14 @@ select {
   padding: 1.5rem 2.5rem;
   margin-top: 1.8rem;
 }
-.input-line {
+.input-row {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   margin: 1.5rem 0;
+  @include if-size(mediumUp) {
+    flex-direction: row;
+  }
 }
 // * { background-color: rgba(255,0,0,.2); }
 // * * { background-color: rgba(0,255,0,.2); }

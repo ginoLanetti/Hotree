@@ -1,6 +1,6 @@
 <form [formGroup]="coordinatorForm" ngxsForm="formData.coordinatorForm" class="section-container">
   <app-section-title [sectionTitle]="'Coordinator'"></app-section-title>
-  <div class="input-line">
+  <div class="input-row">
     <app-label [labelName]="'Responsible'" [mandatory]="true"> </app-label>
     <app-select-input
       [formController]="coordinatorForm.controls.responsible"
@@ -17,7 +17,7 @@
     >
     </app-alert-box>
   </div>
-  <div class="input-line">
+  <div class="input-row">
     <app-label 
       [labelName]="'Email'"
       [submitted]="submitted"

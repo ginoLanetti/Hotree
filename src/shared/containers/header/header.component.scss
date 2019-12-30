@@ -1,4 +1,4 @@
-@import '../../../presets.scss';
+@import "../../../presets.scss";
 
 .header {
   width: 100%;
@@ -7,8 +7,8 @@
   color: white;
   border-top: 0.9rem solid $header-top-border-color;
 }
-.header__text{
- box-sizing: border-box;
+.header__text {
+  box-sizing: border-box;
   width: 80%;
   height: 100%;
   padding: 1rem 2.5rem 0;
