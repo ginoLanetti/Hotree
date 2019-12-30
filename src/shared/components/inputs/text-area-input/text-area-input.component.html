@@ -1,10 +1,9 @@
-<div>
-  <textarea
+ <textarea
     placeholder="{{ placeholder }}"
     [formControl]="formController"
-  ></textarea>
-  <div>
-    <p>Max length {{ maxCharacterLength }} characters</p>
-    <p>{{ formController.value.length }}/{{ maxCharacterLength }}</p>
+    rows="7"
+  ></textarea >
+  <div class="textarea__annotation">
+    <div>Max length {{ maxCharacterLength }} characters</div>
+    <div>{{ formController.value.length }}/{{ maxCharacterLength }}</div>
   </div>
-</div>

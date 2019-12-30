@@ -1,0 +1,20 @@
+@import '../../../../presets.scss';
+
+option {
+  color: $default-color;
+}
+select {
+  width: 100%;
+  appearance:none;
+  background: url('../../../../assets/dropdown-arrow.png') no-repeat right;
+  background-position-x: 98%;
+  padding-right: 1.5rem;
+}
+.select__annotation{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-style: italic;
+  color: $input-border-color;
+  font-weight: 200;
+}

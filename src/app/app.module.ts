@@ -17,7 +17,6 @@ import { RadioInputComponent } from 'src/shared/components/inputs/radio-input/ra
 import { NumberInputComponent } from 'src/shared/components/inputs/number-input/number-input.component';
 import { EmailInputComponent } from 'src/shared/components/inputs/email-input/email-input.component';
 import { DateInputComponent } from 'src/shared/components/inputs/date-input/date-input.component';
-import { TimeInputComponent } from 'src/shared/components/inputs/time-input/time-input.component';
 import { HeaderComponent } from 'src/shared/containers/header/header.component';
 import { SectionTitleComponent } from 'src/shared/components/section-title/section-title.component';
 import { AboutComponent } from 'src/shared/containers/about/about.component';
@@ -49,7 +48,6 @@ import { AlertBoxComponent } from 'src/shared/components/alert-box/alert-box.com
     NumberInputComponent,
     EmailInputComponent,
     DateInputComponent,
-    TimeInputComponent,
     HeaderComponent,
     LabelComponent,
     SectionTitleComponent,

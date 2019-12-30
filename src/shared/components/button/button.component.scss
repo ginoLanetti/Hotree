@@ -1,0 +1,11 @@
+@import '../../../presets.scss';
+
+.publish-button{
+  padding: 1rem 1.875rem;
+  margin: 1.8rem auto;
+  background-color: $publish-button-color;
+  color: white;
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}

@@ -1,8 +1,9 @@
-<div>
+<div class="number-input">
   <input
     type="number"
     placeholder="{{ placeholder }}"
     [formControl]="formController"
+    class="number-input__input"
   />
-  <p *ngIf="infoText">{{ infoText }}</p>
+  <div *ngIf="infoText" class="number-input__info-text">{{ infoText }}</div>
 </div>

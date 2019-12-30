@@ -1,0 +1,11 @@
+@import '../../../../presets.scss';
+
+.label{
+  display: flex;
+  text-transform: uppercase;
+  color: $input-label-color;
+  font-size: 0.9rem;
+}
+.mandatory-star{
+  color: $reddish;
+}

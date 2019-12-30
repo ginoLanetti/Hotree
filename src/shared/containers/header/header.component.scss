@@ -1,0 +1,18 @@
+@import '../../../presets.scss';
+
+.header {
+  width: 100%;
+  height: 5rem;
+  background-color: $header-background-color;
+  color: white;
+  border-top: 0.9rem solid $header-top-border-color;
+}
+.header__text{
+ box-sizing: border-box;
+  width: 75%;
+  height: 100%;
+  padding: 1rem 2.5rem 0;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 100;
+}

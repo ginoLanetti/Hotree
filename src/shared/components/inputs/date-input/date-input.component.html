@@ -1,11 +1,17 @@
-<div>
-  <input type="date" [min]="minDate" [formControl]="formDateController" />
+<div class="starts-on">
+  <input 
+    type="date" 
+    [min]="minDate" 
+    [formControl]="formDateController" 
+    [ngStyle]="{'color': formDateController.pristine && !presetOption ? '#d8d8da' : '#001c00'}" 
+  >
   <p>at</p>
   <input
     type="time"
     min="00:00"
     max="11:59"
     [formControl]="formTimeController"
+    [ngStyle]="{'color': formTimeController.pristine && !presetOption ? '#d8d8da' : '#001c00'}"
   />
   <app-radio-input
     [radioName]="'ampm'"

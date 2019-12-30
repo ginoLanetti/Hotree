@@ -1,0 +1,13 @@
+@import '../../../../presets.scss';
+textarea{
+  width: 100%;
+  resize: none;
+}
+.textarea__annotation{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-style: italic;
+  color: $input-border-color;
+  font-weight: 200;
+}
