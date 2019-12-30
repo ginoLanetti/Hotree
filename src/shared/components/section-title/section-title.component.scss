@@ -1,0 +1,10 @@
+@import "../../../presets.scss";
+
+.section-title__text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: $section-title-color;
+}
+hr {
+  border-top: $input-border-color solid 0.05rem;
+}

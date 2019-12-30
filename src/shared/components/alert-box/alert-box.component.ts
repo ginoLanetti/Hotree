@@ -16,13 +16,13 @@ export class AlertBoxComponent {
       if (this.inputErrors.maxlength) {
         return `${this.sectionName} field has ${this.inputErrors.maxlength.requiredLength} character limit`;
       } else if (this.inputErrors.required) {
-        return `${this.sectionName} field is required`;
+        return `${this.sectionName} cannot be empty`;
       } else if (this.inputErrors.pattern) {
         return `Imvalid e-mail format`;
       }
     } else if (this.formErrors) {
       if (this.formErrors.feeRequired) {
-        return `Fee value is required`;
+        return `Fee value cannot be empty`;
       } else if (this.formErrors.noDateOrTime) {
         return `Time and date are required`;
       } else if (this.formErrors.badTimeFormat) {

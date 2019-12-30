@@ -1,0 +1,32 @@
+
+/*colors*/
+$header-background-color: #355990;
+$header-top-border-color: #1e3c68;
+$section-title-color: #3d6095;
+$input-border-color: #d8d8da;
+$input-label-color: #8ca2c2;
+$section-border-color: #ebebeb;
+$publish-button-color: #ff8e1d;
+$default-color: #676767;
+$alert-color: #ffb3b3;
+$success-color:#70bf75;
+$success-background-color: #f0fcf3;
+$shadow-color: #efefef;
+
+
+/*Media queries*/
+$medium-small-screen-break: 500px;
+$medium-screen-break: 950px;
+
+@mixin if-size($media) {
+  @if $media == medSmallUp {
+    @media only screen and (min-width: $medium-small-screen-break) {
+      @content;
+    }
+  } @else if $media == mediumUp {
+    @media only screen and (min-width: $medium-screen-break) {
+      @content;
+    }
+  } 
+}
+

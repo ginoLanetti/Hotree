@@ -1,0 +1,14 @@
+.main-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+app-button{
+  text-align: center;
+}
+app-success{
+  display: flex;
+  justify-content: center;
+}

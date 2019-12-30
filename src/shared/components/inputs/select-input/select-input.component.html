@@ -1,5 +1,10 @@
 <div>
-  <select [formControl]="formController">
+  <select
+    [formControl]="formController"
+    [ngStyle]="{
+      color: formController.pristine && !presetOption ? '#d8d8da' : '#676767'
+    }"
+  >
     <option
       *ngIf="!presetOption"
       [ngValue]="null"
@@ -26,5 +31,5 @@
       </ng-container>
     </optgroup>
   </select>
-  <p *ngIf="annotation">{{ annotation }}</p>
+  <div *ngIf="annotation" class="select__annotation">{{ annotation }}</div>
 </div>

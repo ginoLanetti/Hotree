@@ -1,5 +1,61 @@
+@import "~normalize.css";
+@import "./presets.scss";
 
+// prestyling 
 
-input[type=time]::-webkit-datetime-edit-ampm-field {
-  display: none;
+html {
+  box-sizing: border-box;
 }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: $default-color;
+  font-size: 1rem;
+}
+h2 {
+  margin: 0;
+}
+
+//shared styles for containers
+
+input::placeholder,
+textarea::placeholder{
+  color: $input-border-color;
+}
+input,
+textarea,
+select {
+  color: $default-color;
+  border: 0.05rem solid $input-border-color;
+  border-radius: 0.02rem;
+  padding: 0.5rem;
+}
+.section-container {
+  border: 0.05rem solid $section-border-color;
+  border-radius: 0.2rem;
+  box-shadow: 0px 0px 5px -1px #57545770;
+  padding: 1.5rem 2.5rem;
+  margin-top: 1.8rem;
+}
+.input-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1.5rem 0;
+  @include if-size(mediumUp) {
+    flex-direction: row;
+  }
+}
+// * { background-color: rgba(255,0,0,.2); }
+// * * { background-color: rgba(0,255,0,.2); }
+// * * * { background-color: rgba(0,0,255,.2); }
+// * * * * { background-color: rgba(255,0,255,.2); }
+// * * * * * { background-color: rgba(0,255,255,.2); }
+// * * * * * * { background-color: rgba(255,255,0,.2); }
+// * * * * * * * { background-color: rgba(255,0,0,.2); }
+// * * * * * * * * { background-color: rgba(0,255,0,.2); }
+// * * * * * * * * * { background-color: rgba(0,0,255,.2); }

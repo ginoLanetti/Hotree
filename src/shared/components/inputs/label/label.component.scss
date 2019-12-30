@@ -1,0 +1,19 @@
+@import "../../../../presets.scss";
+
+.label {
+  display: flex;
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+  color: $input-label-color;
+  font-size: 0.8rem;
+  @include if-size(mediumUp){
+    margin: 0.5rem 0 0; 
+  }
+}
+.mandatory-star {
+  color: $alert-color;
+  margin-left: 0.2rem;
+}
+.label--alert {
+  color: $alert-color;
+}

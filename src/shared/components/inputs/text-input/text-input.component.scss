@@ -1,0 +1,9 @@
+@import '../../../../presets.scss';
+
+.text-input{
+  width: 100%;
+}
+.text-input--alert{
+  width: 100%;
+  border: 0.05rem solid $alert-color;
+}

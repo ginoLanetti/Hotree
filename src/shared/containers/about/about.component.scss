@@ -1,0 +1,35 @@
+@import "../../../presets.scss";
+
+app-label {
+  flex-basis: 15%;
+}
+app-text-input {
+  flex-basis: 65%;
+}
+app-text-area-input {
+  flex-basis: 65%;
+}
+app-select-input {
+  flex-basis: 65%;
+}
+app-alert-box {
+  display: flex;
+  flex-basis: 20%;
+  align-items: center;
+  @include if-size(mediumUp) {
+    margin-left: 0.5rem;
+  }
+}
+.about-form__payment-number-input {
+  @include if-size(mediumUp) {
+    margin-left: 1rem;
+  }
+}
+.about-form__feeAlert {
+  width: 6rem;
+  flex-basis: 26%;
+  @include if-size(mediumup) {
+    width: auto;
+    flex-basis: 26%;
+  }
+}

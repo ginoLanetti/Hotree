@@ -1,4 +1,4 @@
-<div>
+<div class="label" [ngClass]="{'label--alert': submitted && (inputErrors || formErrors)}">
   {{ labelName }}
-  <div *ngIf="mandatory">*</div>
+  <div *ngIf="mandatory" class="mandatory-star">*</div>
 </div>

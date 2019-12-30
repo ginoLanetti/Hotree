@@ -1,9 +1,12 @@
-<label for=""
-  ><input
-    type="radio"
-    name="{{ radioName }}"
-    value="{{ radioValue }}"
-    [formControl]="formController"
-  />
-  {{ radioLabel }}</label
->
+<input
+type="radio"
+name="{{ radioName }}"
+value="{{ radioValue }}"
+id="{{ radioValue }}"
+[formControl]="formController"
+class="radio"
+/>
+<label for="{{ radioValue }}">{{ radioLabel }}</label>
+  
+  
+  

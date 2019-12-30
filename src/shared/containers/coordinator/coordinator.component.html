@@ -1,6 +1,6 @@
-<form [formGroup]="coordinatorForm" ngxsForm="formData.coordinatorForm">
+<form [formGroup]="coordinatorForm" ngxsForm="formData.coordinatorForm" class="section-container">
   <app-section-title [sectionTitle]="'Coordinator'"></app-section-title>
-  <div>
+  <div class="input-row">
     <app-label [labelName]="'Responsible'" [mandatory]="true"> </app-label>
     <app-select-input
       [formController]="coordinatorForm.controls.responsible"
@@ -17,13 +17,19 @@
     >
     </app-alert-box>
   </div>
-  <div>
-    <app-label [labelName]="'Email'"></app-label>
-    <app-email-input [formController]="coordinatorForm.controls.email">
+  <div class="input-row">
+    <app-label 
+      [labelName]="'Email'"
+      [submitted]="submitted"
+      [inputErrors]="coordinatorForm.controls.email.errors"
+      >
+    </app-label>
+    <app-email-input 
+      [formController]="coordinatorForm.controls.email"
+      [submitted]="submitted">
     </app-email-input>
     <app-alert-box
       [submitted]="submitted"
-      [sectionName]="'Email'"
       [inputErrors]="coordinatorForm.controls.email.errors"
     >
     </app-alert-box>

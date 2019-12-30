@@ -1,1 +1,8 @@
-<input type="email" placeholder="Email" [formControl]="formController"/>
+<input 
+  type="email" 
+  placeholder="Email" 
+  [formControl]="formController" 
+  [ngClass]="submitted && formController.errors ?
+     'email-input--alert':
+     'email-input'"
+/>

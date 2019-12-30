@@ -11,6 +11,7 @@ export class DateInputComponent implements OnInit {
   @Input() formTimeController: FormControl;
   @Input() formRadioController: FormControl;
   @Input() minDate: string;
+  @Input() submitted: boolean;
   constructor() { }
 
   ngOnInit() {

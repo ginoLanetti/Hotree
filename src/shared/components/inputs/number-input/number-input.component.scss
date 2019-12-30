@@ -1,0 +1,23 @@
+@import "../../../../presets.scss";
+
+.number-input {
+  display: flex;
+}
+.number-input__input {
+  width: 6rem;
+  text-align: center;
+}
+.number-input__input--alert {
+  border: 0.05rem solid $alert-color;
+  width: 6rem;
+  text-align: center;
+}
+.number-input__input::-webkit-inner-spin-button {
+  display: none;
+}
+.number-input__info-text {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

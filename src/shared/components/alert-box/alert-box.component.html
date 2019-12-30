@@ -1,3 +1,3 @@
-<div *ngIf="submitted && (inputErrors || formErrors)">
-  <p>{{ getAlert() }}</p>
+<div *ngIf="submitted && (inputErrors || formErrors)" class="alert-box">
+  <div class="alert-box__text">{{ getAlert() }}</div>
 </div>
