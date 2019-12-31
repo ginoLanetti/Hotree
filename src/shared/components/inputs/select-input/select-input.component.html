@@ -3,7 +3,8 @@
     [formControl]="formController"
     [ngStyle]="{
       color: formController.pristine && !presetOption ? '#d8d8da' : '#676767'
-    }">
+    }"
+  >
     <ng-container *ngIf="!presetOption">
       <option [ngValue]="null" [disabled]="true" [hidden]="true">
         {{ placeholder }}

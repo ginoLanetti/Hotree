@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { FormattedFormStateInterface } from '../interfaces/formatted-state.interface';
-// import { FormStateInterface } from '../interfaces/form-state.interface';
-
+import { FormattedFormDataInterface } from '../interfaces/formatted-state.interface';
 
 @Injectable({ providedIn: 'root' })
 export class PostFormService {
+
     constructor(private httpClient: HttpClient) { }
 
     httpOptions = {
@@ -15,12 +14,12 @@ export class PostFormService {
       })
     };
 
-    postData(state: any): Observable<FormattedFormStateInterface | boolean> {
+    postData(state: any): Observable<FormattedFormDataInterface | boolean> {
       const { title, description, category, payment, fee, reward } = state.aboutForm;
       const { responsible, email } = state.coordinatorForm;
       const { date, time, ampm, duration } = state.whenForm;
 
-      const convertTime = (timeString: string) => {
+      const convertTime = (timeString: string): string => {
         const timeArray = timeString.split(':');
         const min = timeArray[1];
         let hour = timeArray[0];
@@ -32,7 +31,7 @@ export class PostFormService {
         return `${Number(hour) < 10 ? `0${hour}` : hour }:${min}`;
       };
 
-      const formattedState = {
+      const formattedData = {
         title,
         description,
         category_id: category,
@@ -48,9 +47,11 @@ export class PostFormService {
       };
 
       const apiUrl = `https://serverDomain`;
-      //  this.httpClient.post<FormattedFormStateInterface>(apiUrl, JSON.stringify(formattedState), this.httpOptions);
-      console.log(formattedState);
-      const success = of(true);
-      return success;
+      console.log(formattedData);
+      // for the purpose of returning observable boolean observator is created below.
+      // In real-world scenario line 54 should have been applied
+      const response = of(true);
+      //  this.httpClient.post<FormattedFormDataInterface>(apiUrl, JSON.stringify(formattedState), this.httpOptions);
+      return response;
     }
 }

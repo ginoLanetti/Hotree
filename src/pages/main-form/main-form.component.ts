@@ -1,9 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { Subscription, Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { FormState } from 'src/shared/state/form.state';
-import { FormattedFormStateInterface } from 'src/shared/interfaces/formatted-state.interface';
 import { FormStateInterface } from 'src/shared/interfaces/form-state.interface';
 import { PostForm } from 'src/shared/state/form.actions';
 
@@ -13,25 +11,20 @@ import { PostForm } from 'src/shared/state/form.actions';
   styleUrls: ['./main-form.component.scss']
 })
 export class MainFormComponent implements OnInit, OnDestroy {
-  @Select(FormState.getFormData) formData$: Observable<any>;
-  mainForm: FormGroup;
+  @Select(FormState) formData$: Observable<FormStateInterface>;
   submitted: boolean;
-  formStateData: FormStateInterface;
-  formDataSubscription: Subscription;
+  postSuccess: boolean;
+  private formStateData: FormStateInterface;
+  private formDataSubscription: Subscription;
   public aboutValidity: string;
   public coordinatorValidity: string;
   public whenValidity: string;
-  postSuccess: boolean;
 
-  constructor(private formBuilder: FormBuilder, private store: Store) { }
+
+  constructor(private store: Store) { }
 
   ngOnInit() {
-    this.buildForm();
-    this.formDataSubscription = this.formData$.subscribe(data => {
-      this.formStateData = data;
-    },
-      (error) => console.error(error)
-    );
+    this.formDataSubscription = this.formData$.subscribe(data =>  this.formStateData = data);
   }
 
   ngOnDestroy() {
@@ -66,10 +59,5 @@ export class MainFormComponent implements OnInit, OnDestroy {
       default:
         console.error('no validity receiver');
     }
-  }
-
-  private buildForm(): void {
-    this.mainForm = this.formBuilder.group({
-    });
   }
 }

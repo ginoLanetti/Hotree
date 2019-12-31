@@ -1,5 +1,5 @@
 import { State, Selector, Action, StateContext } from '@ngxs/store';
-import { FormStateInterface } from '../interfaces/form-state.interface';
+import { FormStateInterface, AboutFormInterface, CoordinatorFormInterface, WhenFormInterface } from '../interfaces/form-state.interface';
 import { PostForm } from './form.actions';
 import { PostFormService } from '../services/post-form.service';
 
@@ -19,17 +19,14 @@ import { PostFormService } from '../services/post-form.service';
   }
 })
 export class FormState {
+
   constructor(private service: PostFormService) {}
 
-  @Selector()
-  static getFormData(state: FormStateInterface): FormStateInterface {
-    return state;
-  }
   @Action(PostForm)
   postForm(context: StateContext<FormStateInterface>) {
-    const aboutForm = context.getState().aboutForm.model;
-    const coordinatorForm = context.getState().coordinatorForm.model;
-    const whenForm = context.getState().whenForm.model;
+    const aboutForm: AboutFormInterface = context.getState().aboutForm.model;
+    const coordinatorForm: CoordinatorFormInterface = context.getState().coordinatorForm.model;
+    const whenForm: WhenFormInterface = context.getState().whenForm.model;
     const formattedState = {
       aboutForm,
       coordinatorForm,
