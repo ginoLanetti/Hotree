@@ -22,7 +22,6 @@ export interface AboutFormInterface {
 export interface CoordinatorFormInterface {
   responsible: number;
   email: string;
-
 }
 
 export interface WhenFormInterface {

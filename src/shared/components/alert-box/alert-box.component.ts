@@ -32,6 +32,4 @@ export class AlertBoxComponent {
       }
     }
   }
-
-  constructor() { }
 }

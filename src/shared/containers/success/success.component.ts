@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./success.component.scss']
 })
 export class SuccessComponent {
-  constructor() { }
+
 }

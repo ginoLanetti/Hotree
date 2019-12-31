@@ -12,8 +12,4 @@ export class LabelComponent {
 @Input() submitted: boolean;
 @Input() formErrors: ValidationErrors;
 @Input() inputErrors: ValidationErrors;
-
-
-  constructor() { }
-
 }

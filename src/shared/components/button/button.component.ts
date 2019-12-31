@@ -9,8 +9,4 @@ import { FormControl } from '@angular/forms';
 export class ButtonComponent {
   @Input() actionText: string;
   @Input() buttonType: string;
-  @Input() formController: FormControl;
-
-  constructor() { }
-
 }

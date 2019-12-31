@@ -12,6 +12,4 @@ export class NumberInputComponent {
   @Input() formController: FormControl;
   @Input() submitted: boolean;
   @Input() formErrors: ValidationErrors;
-  constructor() { }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { FormState } from 'src/shared/state/form.state';
@@ -10,7 +10,7 @@ import { PostForm } from 'src/shared/state/form.actions';
   templateUrl: './main-form.component.html',
   styleUrls: ['./main-form.component.scss']
 })
-export class MainFormComponent implements OnInit, OnDestroy {
+export class MainFormComponent {
   @Select(FormState) formData$: Observable<FormStateInterface>;
   submitted: boolean;
   postSuccess: boolean;
@@ -20,16 +20,7 @@ export class MainFormComponent implements OnInit, OnDestroy {
   public coordinatorValidity: string;
   public whenValidity: string;
 
-
   constructor(private store: Store) { }
-
-  ngOnInit() {
-    this.formDataSubscription = this.formData$.subscribe(data =>  this.formStateData = data);
-  }
-
-  ngOnDestroy() {
-    this.formDataSubscription.unsubscribe();
-  }
 
   submit() {
     this.submitted = true;

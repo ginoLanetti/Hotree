@@ -19,7 +19,6 @@ export class WhenComponent implements OnInit {
     this.whenForm.statusChanges.subscribe(
       status => {
         this.validityChange.emit(status);
-        console.log(status);
       }
     );
   }
