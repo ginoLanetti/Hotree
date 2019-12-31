@@ -8,18 +8,12 @@ export interface FormStateInterface {
       fee: number,
       reward: number
     },
-    dirty: boolean,
-    status: string,
-    errors: object
   };
   coordinatorForm: {
     model: {
       responsible: number,
       email: string
     },
-    dirty: boolean,
-    status: string,
-    errors: object
   };
   whenForm: {
     model: {
@@ -28,8 +22,5 @@ export interface FormStateInterface {
       ampm: string,
       duration: number
     },
-    dirty: boolean,
-    status: string,
-    errors: object
   };
 }

@@ -3,33 +3,29 @@
     [formControl]="formController"
     [ngStyle]="{
       color: formController.pristine && !presetOption ? '#d8d8da' : '#676767'
-    }"
-  >
-    <option
-      *ngIf="!presetOption"
-      [ngValue]="null"
-      [disabled]="true"
-      [hidden]="true"
-    >
-      {{ placeholder }}
-    </option>
-    <optgroup *ngIf="presetOption" label="{{ presetOptgroupName }}">
-      <option [ngValue]="presetOption.id"
-        >{{ presetOption.name }} {{ presetOption.lastname }}</option
-      >
-    </optgroup>
+    }">
     <ng-container *ngIf="!presetOption">
+      <option [ngValue]="null" [disabled]="true" [hidden]="true">
+        {{ placeholder }}
+      </option>
       <option *ngFor="let option of optionsList" [ngValue]="option.id">
         {{ option.name }}
       </option>
     </ng-container>
-    <optgroup *ngIf="presetOption" label="{{ otherOptgroupName }}">
-      <ng-container *ngFor="let option of optionsList">
-        <option *ngIf="option.id !== presetOption.id" [ngValue]="option.id">
-          {{ option.name }} {{ option.lastname }}
+    <ng-container *ngIf="presetOption">
+      <optgroup label="{{ presetOptgroupName }}">
+        <option [ngValue]="presetOption.id"
+          >{{ presetOption.name }} {{ presetOption.lastname }}
         </option>
-      </ng-container>
-    </optgroup>
+      </optgroup>
+      <optgroup label="{{ otherOptgroupName }}">
+        <ng-container *ngFor="let option of optionsList">
+          <option *ngIf="option.id !== presetOption.id" [ngValue]="option.id">
+            {{ option.name }} {{ option.lastname }}
+          </option>
+        </ng-container>
+      </optgroup>
+    </ng-container>
   </select>
   <div *ngIf="annotation" class="select__annotation">{{ annotation }}</div>
 </div>

@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Subscription, Observable } from 'rxjs';
-import { Select } from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
 import { FormState } from 'src/shared/state/form.state';
 import { FormattedFormStateInterface } from 'src/shared/interfaces/formatted-state.interface';
+import { FormStateInterface } from 'src/shared/interfaces/form-state.interface';
+import { PostForm } from 'src/shared/state/form.actions';
 
 @Component({
   selector: 'app-main-form',
@@ -14,14 +16,14 @@ export class MainFormComponent implements OnInit, OnDestroy {
   @Select(FormState.getFormData) formData$: Observable<any>;
   mainForm: FormGroup;
   submitted: boolean;
-  formStateData: FormattedFormStateInterface;
+  formStateData: FormStateInterface;
   formDataSubscription: Subscription;
   public aboutValidity: string;
   public coordinatorValidity: string;
   public whenValidity: string;
-  formsValid: boolean;
+  postSuccess: boolean;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private store: Store) { }
 
   ngOnInit() {
     this.buildForm();
@@ -43,8 +45,10 @@ export class MainFormComponent implements OnInit, OnDestroy {
       this.coordinatorValidity === 'VALID' &&
       this.whenValidity === 'VALID'
     ) {
-      this.formsValid = true;
-      console.log(this.formStateData);
+      this.store.dispatch(new PostForm()).subscribe(
+        success => this.postSuccess = success,
+        error => console.error(error)
+      );
     }
   }
 
