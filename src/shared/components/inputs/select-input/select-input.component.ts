@@ -15,7 +15,4 @@ export class SelectInputComponent {
   @Input() otherOptgroupName: string;
   @Input() annotation: string;
   @Input() formController: FormControl;
-
-  constructor() { }
-
 }

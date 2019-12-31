@@ -13,8 +13,8 @@ export class CoordinatorComponent implements OnInit {
   @Output() validityChange = new EventEmitter<string>();
   coordinatorForm: FormGroup;
   usersList: OptionInterface[];
-  private loggedUserId = 3;
   presetUser: OptionInterface;
+  private loggedUserId = 3;
 
   constructor(private formBuilder: FormBuilder, private fetchingSelectData: FetchingSelectDataService) { }
 
@@ -33,7 +33,6 @@ export class CoordinatorComponent implements OnInit {
        this.validityChange.emit(status);
       }
     );
-
   }
 
   private buildForm(): void {

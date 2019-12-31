@@ -38,7 +38,9 @@
     flex-basis: inherit;
   }
 }
-.starts-on__date:invalid::-webkit-datetime-edit,
+.starts-on__date:invalid::-webkit-datetime-edit{
+  color: $input-label-color;
+}
 .starts-on__date::-webkit-calendar-picker-indicator {
   color: $input-label-color;
   background-color: none;

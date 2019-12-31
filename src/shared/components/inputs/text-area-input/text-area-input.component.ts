@@ -11,7 +11,4 @@ export class TextAreaInputComponent {
   @Input() formController: FormControl;
   @Input() maxCharacterLength: number;
   @Input() submitted: boolean;
-
-  constructor() { }
-
 }

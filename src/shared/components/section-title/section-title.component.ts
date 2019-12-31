@@ -7,7 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class SectionTitleComponent  {
   @Input() sectionTitle: string;
-
-  constructor() { }
-
 }

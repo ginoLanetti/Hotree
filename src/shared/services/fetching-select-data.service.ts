@@ -10,7 +10,7 @@ export class FetchingSelectDataService {
   constructor(private httpClient: HttpClient) { }
 
   fetchData(datasetName: string): Observable<OptionInterface[]> {
-      const apiUrl = `https://my-json-server.typicode.com/ginoLanetti/Hotree/${datasetName}`;
-      return this.httpClient.get<OptionInterface[]>(apiUrl);
+    const apiUrl = `https://my-json-server.typicode.com/ginoLanetti/Hotree/${datasetName}`;
+    return this.httpClient.get<OptionInterface[]>(apiUrl);
   }
 }

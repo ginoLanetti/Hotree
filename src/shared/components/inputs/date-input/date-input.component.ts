@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,16 +6,10 @@ import { FormControl } from '@angular/forms';
   templateUrl: './date-input.component.html',
   styleUrls: ['./date-input.component.scss']
 })
-export class DateInputComponent implements OnInit {
+export class DateInputComponent {
   @Input() formDateController: FormControl;
   @Input() formTimeController: FormControl;
   @Input() formRadioController: FormControl;
   @Input() minDate: string;
   @Input() submitted: boolean;
-  constructor() { }
-
-  ngOnInit() {
-    console.log(this.minDate);
-  }
-
 }

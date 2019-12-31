@@ -11,7 +11,4 @@ export class RadioInputComponent {
   @Input() radioName: string;
   @Input() radioValue: string;
   @Input() formController: FormControl;
-
-  constructor() { }
-
 }
