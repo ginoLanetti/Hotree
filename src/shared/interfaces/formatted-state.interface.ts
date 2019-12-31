@@ -1,4 +1,4 @@
-export interface FormattedFormStateInterface {
+export interface FormattedFormDataInterface {
   title: string;
   description: string;
   category_id?: number;

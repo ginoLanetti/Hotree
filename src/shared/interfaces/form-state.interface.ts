@@ -1,35 +1,33 @@
 export interface FormStateInterface {
   aboutForm: {
-    model: {
-      title: string,
-      description: string,
-      category: number,
-      payment: string,
-      fee: number,
-      reward: number
-    },
-    dirty: boolean,
-    status: string,
-    errors: object
+    model: AboutFormInterface,
   };
   coordinatorForm: {
-    model: {
-      responsible: number,
-      email: string
-    },
-    dirty: boolean,
-    status: string,
-    errors: object
+    model: CoordinatorFormInterface
   };
   whenForm: {
-    model: {
-      date: string,
-      time: string,
-      ampm: string,
-      duration: number
-    },
-    dirty: boolean,
-    status: string,
-    errors: object
+    model: WhenFormInterface
   };
+}
+
+export interface AboutFormInterface {
+  title: string;
+  description: string;
+  category: number;
+  payment: string;
+  fee: number;
+  reward: number;
+}
+
+export interface CoordinatorFormInterface {
+  responsible: number;
+  email: string;
+
+}
+
+export interface WhenFormInterface {
+  date: string;
+  time: string;
+  ampm: string;
+  duration: number;
 }

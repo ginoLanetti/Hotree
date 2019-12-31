@@ -1,61 +1,37 @@
-import { State, Selector } from '@ngxs/store';
-import { FormattedFormStateInterface } from '../interfaces/formatted-state.interface';
-import { FormStateInterface } from '../interfaces/form-state.interface';
+import { State, Selector, Action, StateContext } from '@ngxs/store';
+import { FormStateInterface, AboutFormInterface, CoordinatorFormInterface, WhenFormInterface } from '../interfaces/form-state.interface';
+import { PostForm } from './form.actions';
+import { PostFormService } from '../services/post-form.service';
+
 
 @State<FormStateInterface>({
   name: 'formData',
   defaults: {
     aboutForm: {
       model: undefined,
-      dirty: false,
-      status: '',
-      errors: {}
     },
     coordinatorForm: {
       model: undefined,
-      dirty: false,
-      status: '',
-      errors: {}
     },
     whenForm: {
       model: undefined,
-      dirty: false,
-      status: '',
-      errors: {}
     }
   }
 })
 export class FormState {
-  @Selector()
-  static getFormData(state: FormStateInterface): FormattedFormStateInterface {
-    const { title, description, category, payment, fee, reward } = state.aboutForm.model;
-    const { responsible, email } = state.coordinatorForm.model;
-    const { date, time, ampm, duration } = state.whenForm.model;
-    const convertTime = (timeString: string) => {
-      const timeArray = timeString.split(':');
-      const min = timeArray[1];
-      let hour = timeArray[0];
-      if (ampm === 'pm' && Number(hour) < 12) {
-        hour = `${12 + parseInt(timeArray[0], 10)}`;
-      } else if ((ampm === 'pm' && Number(hour) === 12)) {
-        hour = `${parseInt(timeArray[0], 10) - 12}`;
-      }
-      return `${Number(hour) < 10 ? `0${hour}` : hour }:${min}`;
-    };
+
+  constructor(private service: PostFormService) {}
+
+  @Action(PostForm)
+  postForm(context: StateContext<FormStateInterface>) {
+    const aboutForm: AboutFormInterface = context.getState().aboutForm.model;
+    const coordinatorForm: CoordinatorFormInterface = context.getState().coordinatorForm.model;
+    const whenForm: WhenFormInterface = context.getState().whenForm.model;
     const formattedState = {
-      title: `${title}`,
-      description: `${description}`,
-      category_id: category,
-      paid_event: payment === 'paid' ? true : false,
-      event_fee: payment === 'paid' ? fee : null,
-      reward: reward ? reward : null,
-      date: `${date}T${convertTime(time)}`,
-      duration: duration * 3600,
-      coordinator: {
-        email: `${email}`,
-        id: responsible
-      }
+      aboutForm,
+      coordinatorForm,
+      whenForm
     };
-    return formattedState;
+    return this.service.postData(formattedState);
   }
 }

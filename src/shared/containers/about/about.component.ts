@@ -14,6 +14,7 @@ export class AboutComponent implements OnInit {
   @Output() validityChange = new EventEmitter<string>();
   aboutForm: FormGroup;
   optionsList: OptionInterface[];
+
   constructor(private formBuilder: FormBuilder, private fetchingSelectData: FetchingSelectDataService) { }
 
   ngOnInit() {
@@ -25,7 +26,6 @@ export class AboutComponent implements OnInit {
     this.aboutForm.statusChanges.subscribe(
       status => {
        this.validityChange.emit(status);
-       console.log(status);
       }
     );
   }

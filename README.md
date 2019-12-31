@@ -1,27 +1,53 @@
-# Hotree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-## Development server
+# Hotree    
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+  Please make sure that you have:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-  [Node.js](http://www.dropwizard.io/1.0.2/docs/) istalled. Since _npm_ has been used for managing dependencies, this is the recommended go-to package manager.
 
-## Build
+-  [Angular CLI](https://github.com/angular/angular-cli#installation) installed globally:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`npm install -g @angular/cli`
 
-## Running unit tests
+- all the dependecies needed:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+run `npm install` int the project folder
+ 
+To run a dev server use `ng serve` command and navigate to `http://localhost:4200/` in your browser - any local changes will be automatically updated.
 
-## Running end-to-end tests
+## Built With
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+-  [Angular 8](https://angular.io/) - The web framework
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-  [NGXS](https://www.ngxs.io/) - State management library and pattern
+  
+## Highlights
+
+- Fields `Title`, `Description`, `Starts on`, and `Responsible` are mandatory.
+- `Description` field has 140 character limit and counter below (with color change after reaching the limit)
+- App is responsive (from 320px up).
+- Events can’t be created prior to the actual date (validation + input style changes for invalid values).
+- `Time` field accepts 12h time format but on the output date is formatted as YYYY-MM-DDTHH:mm in 24h format
+- Field `Payment` is mandatory in case of paid events, and `Fee` input appears only when payment field is filled
+- Select options are fetched from fake API (My JSON Server).
+- `Coordinator` field has a default selected option with currently logged in user (id = 3).
+- The `Email` field's format is validated.
+- logged data structure:
+
+{
+  title: string,
+  description: string,
+  category_id?: number,
+  paid_event: boolean,
+  event_fee?: number,
+  reward?: number,
+  date: string, // format: YYYY-MM-DDTHH:mm (example: 2018-01-19T15:15)
+  duration?: number, // in seconds
+  coordinator: {
+    email?: string,
+    id: string,
+}
